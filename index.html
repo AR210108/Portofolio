@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #6750A4;
+      --on-primary: #FFFFFF;
+      --background: #F5F5F5;
+      --surface: #FFFFFF;
+      --on-surface: #1C1B1F;
+      --shadow: rgba(0, 0, 0, 0.08);
+    }
+
+    body {
+      background-color: var(--background);
+      color: var(--on-surface);
+      font-family: 'Outfit', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: var(--primary);
+      color: var(--on-primary);
+      padding: 1rem 0;
+      box-shadow: 0 2px 4px var(--shadow);
+    }
+
+    nav a {
+      color: var(--on-primary);
+      text-decoration: none;
+      margin-right: 1rem;
+      font-weight: 600;
+    }
+
+    .hero {
+      background: linear-gradient(145deg, #6750A4, #7F67BE);
+      color: white;
+      text-align: center;
+      padding: 4rem 1rem;
+      border-bottom-left-radius: 2rem;
+      border-bottom-right-radius: 2rem;
+    }
+
+    .hero img {
+      border: 4px solid white;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    section {
+      padding: 4rem 1rem;
+    }
+
+    h3 {
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .card {
+      border: none;
+      border-radius: 1rem;
+      box-shadow: 0 2px 10px var(--shadow);
+      transition: transform 0.3s ease;
+      height: 100%;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .testimonial-card {
+      background-color: white;
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px var(--shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 16px var(--shadow);
+    }
+
+    .testimonial-img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+    }
+
+    footer {
+      background-color: #1C1B1F;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      border-top-left-radius: 2rem;
+      border-top-right-radius: 2rem;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      border: none;
+      font-weight: 600;
+    }
+
+    .btn-outline-light {
+      border-color: white;
+      color: white;
+      font-weight: 600;
+    }
+
+    .sosmed-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      padding: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      margin: 0 6px;
+    }
+
+    .sosmed-circle {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      padding: 0;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .sosmed-circle:hover {
+      opacity: 0.8;
+      transform: scale(1.1);
+      transition: 0.3s;
+    }
+
+
+
+    @media (max-width: 767px) {
+      .hero h2 {
+        font-size: 1.8rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 0.5rem 0.5rem;
+      }
+
+      .btn {
+        display: block;
+        width: 100%;
+        margin: 0.5rem auto;
+      }
+
+      .row>[class^="col-"] {
+        margin-bottom: 1rem;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container d-flex justify-content-between align-items-center">
+      <h1 class="h4">RINDA</h1>
+      <nav>
+        <a href="#proyek"><i class="bi bi-window"></i> Proyek</a>
+        <a href="#kontak"><i class="bi bi-envelope"></i> Kontak</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <img src="/img/foto-profil.jpg" alt="Foto Profil" class="rounded-circle mb-3" width="150">
+    <h2 class="fw-bold">RINDA</h2>
+    <p class="fs-5">Web Developer | Front-end & Back-end</p>
+    <a href="#proyek" class="btn btn-primary px-4 me-2">Lihat Proyek</a>
+    <a href="cv.pdf" class="btn btn-outline-light px-4">Unduh CV</a>
+  </section>
+
+  <!-- Tentang Saya -->
+  <section class="container">
+    <h3 class="mb-3">Tentang Saya</h3>
+    <p class="lead">Saya seorang pengembang web yang berpengalaman dalam membangun aplikasi menggunakan HTML, CSS,
+      JavaScript, dan Laravel. Tujuan saya adalah menciptakan solusi digital yang cerdas, menarik, dan efisien untuk
+      pengguna.</p>
+  </section>
+
+  <!-- Skills -->
+  <section class="container">
+    <h3 class="mb-4 text-center">Keahlian</h3>
+    <div class="row text-center">
+      <div class="col-md-3 mb-3">
+        <div class="p-3 bg-white rounded shadow-sm fw-semibold">HTML</div>
+      </div>
+      <div class="col-md-3 mb-3">
+        <div class="p-3 bg-white rounded shadow-sm fw-semibold">CSS</div>
+      </div>
+      <div class="col-md-3 mb-3">
+        <div class="p-3 bg-white rounded shadow-sm fw-semibold">Laravel</div>
+      </div>
+      <div class="col-md-3 mb-3">
+        <div class="p-3 bg-white rounded shadow-sm fw-semibold">Unity</div>
+      </div>
+    </div>
+    <div class="row text-center">
+      <div class="col-md-3 mb-3">
+        <div class="p-3 bg-white rounded shadow-sm fw-semibold">Figma</div>
+      </div>
+      <div class="col-md-3 mb-3">
+        <div class="p-3 bg-white rounded shadow-sm fw-semibold">Excel</div>
+      </div>
+      <div class="col-md-3 mb-3">
+        <div class="p-3 bg-white rounded shadow-sm fw-semibold">Power Point</div>
+      </div>
+      <div class="col-md-3 mb-3">
+        <div class="p-3 bg-white rounded shadow-sm fw-semibold">Word</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proyek -->
+  <section class="container" id="proyek">
+    <h3 class="mb-4 text-center">Proyek Saya</h3>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <img src="/img/proyek1.jpg" class="card-img-top rounded-top" alt="Proyek 1">
+          <div class="card-body">
+            <h5 class="card-title">Game Quiz</h5>
+            <p class="card-text">"Quiz Sejarah Indonesia" adalah game edukatif interaktif yang dirancang untuk menguji
+              dan meningkatkan wawasan sejarah bangsa. Cocok untuk pelajar, guru, dan siapa saja yang ingin belajar
+              sejarah dengan cara menyenangkan.</p>
+            <a href="Quis Sejarah.apk" class="btn btn-primary">Lihat</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <img src="/img/proyek2.png" class="card-img-top rounded-top" alt="Proyek 2">
+          <div class="card-body">
+            <h5 class="card-title">Web Pembuatan Kartu</h5>
+            <p class="card-text">Repositori ini berisi aplikasi Python sederhana untuk membuat kartu absen anggota
+              himpunan secara otomatis. Program ini membaca data dari file Excel dan menghasilkan file kartu absen dalam
+              format gambar (PNG) secara massal.</p>
+            <a href="https://github.com/AR210108/py-kartu-absen-himpunan" class="btn btn-primary">Lihat</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <img src="/img/proyek1.jpg" class="card-img-top rounded-top" alt="Proyek 1">
+          <div class="card-body">
+            <h5 class="card-title">Game Quiz</h5>
+            <p class="card-text">"Quiz Sejarah Indonesia" adalah game edukatif interaktif yang dirancang untuk menguji
+              dan meningkatkan wawasan sejarah bangsa. Cocok untuk pelajar, guru, dan siapa saja yang ingin belajar
+              sejarah dengan cara menyenangkan.</p>
+            <a href="Quis Sejarah.apk" class="btn btn-primary">Lihat</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontak -->
+  <section class="container" id="kontak">
+    <h3 class="mb-4 text-center">Kontak & Medsos</h3>
+    <div class="text-center">
+      <p><i class="bi bi-envelope"></i> Email: <a href="mailto:emailkamu@gmail.com">aseprinda2101@gmail.com</a></p>
+      <p><i class="bi bi-whatsapp"></i> WhatsApp: <a href="https://wa.me/6281214137112"
+          target="_blank">0812-1413-7112</a></p>
+    </div>
+    <div class="text-center d-flex justify-content-center flex-wrap mt-4" style="gap: 12px;">
+      <a href="https://github.com/AR210108" class="sosmed-circle" style="background-color: #333; color: white;">
+        <i class="bi bi-github"></i>
+      </a>
+      <a href="https://vercel.com/ar210108" class="sosmed-circle" style="background-color: black; color: white;">
+        <i class="bi bi-globe2"></i>
+      </a>
+      <a href="https://instagram.com/Aseprinda2101" class="sosmed-circle"
+        style="background-color: #e4405f; color: white;">
+        <i class="bi bi-instagram"></i>
+      </a>
+      <a href="https://facebook.com/username" class="sosmed-circle" style="background-color: #1877f2; color: white;">
+        <i class="bi bi-facebook"></i>
+      </a>
+      <a href="https://tiktok.com/@rineclipse3" class="sosmed-circle" style="background-color: #000; color: white;">
+        <i class="bi bi-tiktok"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Rinda. All rights reserved.</p>
+  </footer>
+</body>
+
+</html>
