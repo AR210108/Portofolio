@@ -1,54 +1,46 @@
-<!DOCTYPE html>
-<html lang="id">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Profesional - Rinda</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+<!DOCTYPE html> 
+<html lang="id"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Portofolio Profesional - Rinda</title> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="icon" href="img/logo.png">
-    <style>
-        :root {
-            --primary: #6750A4;
+    <style> 
+        :root { 
+            --primary: #6750A4; 
             --primary-dark: #523a8a;
             --secondary: #7F67BE;
             --accent: #D0BCFF;
             --accent-light: #EADDFF;
-            --on-primary: #FFFFFF;
-            --background: #F8F9FA;
-            --surface: #FFFFFF;
-            --on-surface: #1C1B1F;
-            --shadow: rgba(0, 0, 0, 0.1);
+            --on-primary: #FFFFFF; 
+            --background: #F8F9FA; 
+            --surface: #FFFFFF; 
+            --on-surface: #1C1B1F; 
+            --shadow: rgba(0, 0, 0, 0.1); 
             --shadow-lg: rgba(0, 0, 0, 0.15);
-        }
-
+        } 
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
-        body {
-            background-color: var(--background);
-            color: var(--on-surface);
-            font-family: 'Poppins', sans-serif;
+        
+        body { 
+            background-color: var(--background); 
+            color: var(--on-surface); 
+            font-family: 'Poppins', sans-serif; 
             overflow-x: hidden;
-        }
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
+        } 
+        
+        h1, h2, h3, h4, h5, h6 {
             font-family: 'Outfit', sans-serif;
         }
-
+        
         /* Animasi loading */
         .loader-wrapper {
             position: fixed;
@@ -63,7 +55,7 @@
             z-index: 9999;
             transition: opacity 0.5s ease, visibility 0.5s ease;
         }
-
+        
         .loader {
             width: 60px;
             height: 60px;
@@ -72,36 +64,34 @@
             border-top-color: white;
             animation: spin 1s ease-in-out infinite;
         }
-
+        
         @keyframes spin {
-            to {
-                transform: rotate(360deg);
-            }
+            to { transform: rotate(360deg); }
         }
-
+        
         .loader-wrapper.hidden {
             opacity: 0;
             visibility: hidden;
         }
-
+        
         /* Header */
-        header {
-            background-color: var(--primary);
-            color: var(--on-primary);
-            padding: 1rem 0;
-            box-shadow: 0 2px 10px var(--shadow);
+        header { 
+            background-color: var(--primary); 
+            color: var(--on-primary); 
+            padding: 1rem 0; 
+            box-shadow: 0 2px 10px var(--shadow); 
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
             transition: all 0.3s ease;
         }
-
+        
         header.scrolled {
             padding: 0.7rem 0;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
         }
-
+        
         .navbar-brand {
             font-weight: 700;
             font-size: 1.5rem;
@@ -111,7 +101,7 @@
             color: white !important;
             text-decoration: none;
         }
-
+        
         /* Profil foto di navbar */
         .navbar-profile {
             width: 35px;
@@ -125,29 +115,29 @@
             transform: scale(0);
             opacity: 0;
         }
-
+        
         header.show-profile .navbar-profile {
             display: block;
             transform: scale(1);
             opacity: 1;
         }
-
+        
         /* Animasi untuk foto profil di hero section saat scroll */
         .hero-profile {
             transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-
+        
         .hero-profile.fade-out {
             transform: scale(0.8);
             opacity: 0;
         }
-
+        
         /* Navbar Menu */
         .navbar-nav {
             display: flex;
             align-items: center;
         }
-
+        
         .nav-link {
             color: var(--on-primary) !important;
             text-decoration: none;
@@ -157,7 +147,7 @@
             transition: all 0.3s ease;
             padding: 0.5rem 0;
         }
-
+        
         .nav-link::after {
             content: '';
             position: absolute;
@@ -168,26 +158,26 @@
             background-color: var(--accent);
             transition: width 0.3s ease;
         }
-
+        
         .nav-link:hover::after {
             width: 100%;
         }
-
+        
         .nav-link i {
             margin-right: 5px;
         }
-
+        
         /* Mobile Menu Toggle */
         .navbar-toggler {
             border: none;
             padding: 0.25rem 0.5rem;
             background-color: transparent;
         }
-
+        
         .navbar-toggler:focus {
             box-shadow: none;
         }
-
+        
         .navbar-toggler-icon {
             background-image: none;
             position: relative;
@@ -198,7 +188,7 @@
             justify-content: center;
             align-items: center;
         }
-
+        
         .navbar-toggler-icon span {
             display: block;
             width: 25px;
@@ -208,45 +198,45 @@
             transition: all 0.3s ease;
             border-radius: 3px;
         }
-
+        
         /* State default (collapsed) - tiga garis */
         .navbar-toggler.collapsed .navbar-toggler-icon span:nth-child(1) {
             transform: none;
         }
-
+        
         .navbar-toggler.collapsed .navbar-toggler-icon span:nth-child(2) {
             opacity: 1;
         }
-
+        
         .navbar-toggler.collapsed .navbar-toggler-icon span:nth-child(3) {
             transform: none;
         }
-
+        
         /* State saat menu terbuka (expanded) - berubah menjadi X */
         .navbar-toggler:not(.collapsed) .navbar-toggler-icon span:nth-child(1) {
             transform: rotate(45deg) translate(5px, 5px);
         }
-
+        
         .navbar-toggler:not(.collapsed) .navbar-toggler-icon span:nth-child(2) {
             opacity: 0;
         }
-
+        
         .navbar-toggler:not(.collapsed) .navbar-toggler-icon span:nth-child(3) {
             transform: rotate(-45deg) translate(7px, -6px);
         }
-
+        
         /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            text-align: center;
-            padding: 8rem 1rem 5rem;
-            border-bottom-left-radius: 2rem;
-            border-bottom-right-radius: 2rem;
+        .hero { 
+            background: linear-gradient(135deg, var(--primary), var(--secondary)); 
+            color: white; 
+            text-align: center; 
+            padding: 8rem 1rem 5rem; 
+            border-bottom-left-radius: 2rem; 
+            border-bottom-right-radius: 2rem; 
             position: relative;
             overflow: hidden;
         }
-
+        
         .hero::before {
             content: '';
             position: absolute;
@@ -259,7 +249,7 @@
             opacity: 0.2;
             z-index: 0;
         }
-
+        
         .hero::after {
             content: '';
             position: absolute;
@@ -271,35 +261,35 @@
             border-radius: 50% 50% 0 0 / 100% 100% 0 0;
             z-index: 1;
         }
-
+        
         .hero-content {
             position: relative;
             z-index: 1;
         }
-
-        .hero img {
-            border: 5px solid white;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        
+        .hero img { 
+            border: 5px solid white; 
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); 
             transition: all 0.5s ease;
         }
-
+        
         .hero img:hover {
             transform: scale(1.05);
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
         }
-
+        
         .hero-description {
             font-size: 1.2rem;
             max-width: 600px;
             margin: 1.5rem auto 2rem;
             animation: fadeInUp 1s ease 0.3s both;
         }
-
+        
         .hero-buttons {
             animation: fadeInUp 1s ease 0.6s both;
             margin-top: 2rem;
         }
-
+        
         .btn-hero {
             padding: 0.7rem 2rem;
             font-weight: 600;
@@ -309,7 +299,7 @@
             position: relative;
             overflow: hidden;
         }
-
+        
         .btn-hero::before {
             content: '';
             position: absolute;
@@ -321,48 +311,48 @@
             transition: left 0.5s ease;
             z-index: 0;
         }
-
+        
         .btn-hero:hover::before {
             left: 0;
         }
-
+        
         .btn-hero span {
             position: relative;
             z-index: 1;
         }
-
+        
         .btn-primary-custom {
             background-color: white;
             color: var(--primary);
             border: none;
         }
-
+        
         .btn-primary-custom:hover {
             background-color: var(--accent);
             color: var(--primary);
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
-
+        
         .btn-outline-custom {
             background-color: transparent;
             color: white;
             border: 2px solid white;
         }
-
+        
         .btn-outline-custom:hover {
             background-color: white;
             color: var(--primary);
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
-
+        
         /* Section Styling */
-        section {
-            padding: 5rem 1rem;
+        section { 
+            padding: 5rem 1rem; 
             position: relative;
         }
-
+        
         .section-title {
             font-weight: 700;
             color: var(--primary);
@@ -370,7 +360,7 @@
             position: relative;
             display: inline-block;
         }
-
+        
         .section-title::after {
             content: '';
             position: absolute;
@@ -381,14 +371,14 @@
             left: 25%;
             border-radius: 2px;
         }
-
+        
         .section-subtitle {
             color: #6c757d;
             max-width: 700px;
             margin: 0 auto 3rem;
             text-align: center;
         }
-
+        
         /* Tentang Saya */
         .about-section {
             background-color: white;
@@ -400,7 +390,7 @@
             position: relative;
             overflow: hidden;
         }
-
+        
         .about-section::before {
             content: '';
             position: absolute;
@@ -410,18 +400,18 @@
             height: 100%;
             background-color: var(--primary);
         }
-
+        
         .about-section:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
-
+        
         .about-section h3 {
             color: var(--primary);
             position: relative;
             padding-left: 15px;
         }
-
+        
         .about-section h3::before {
             content: '';
             position: absolute;
@@ -433,7 +423,7 @@
             background-color: var(--accent);
             border-radius: 3px;
         }
-
+        
         /* Skills */
         .skills-container {
             display: flex;
@@ -441,7 +431,7 @@
             justify-content: center;
             gap: 1.5rem;
         }
-
+        
         .skill-item {
             background-color: white;
             border-radius: 1rem;
@@ -454,7 +444,7 @@
             position: relative;
             overflow: hidden;
         }
-
+        
         .skill-item::before {
             content: '';
             position: absolute;
@@ -465,17 +455,17 @@
             background-color: var(--primary);
             transition: width 0.3s ease;
         }
-
+        
         .skill-item:hover::before {
             width: 100%;
             opacity: 0.1;
         }
-
+        
         .skill-item:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
         }
-
+        
         .skill-icon {
             font-size: 2.5rem;
             color: var(--primary);
@@ -486,23 +476,23 @@
             align-items: center;
             height: 60px;
         }
-
+        
         .skill-item:hover .skill-icon {
             transform: scale(1.2);
             color: var(--secondary);
         }
-
+        
         .skill-name {
             font-weight: 600;
             font-size: 1.1rem;
         }
-
+        
         /* Logo Laravel */
         .laravel-logo {
             width: 50px;
             height: auto;
         }
-
+        
         /* Proyek */
         .project-card {
             border: none;
@@ -514,7 +504,7 @@
             background-color: white;
             position: relative;
         }
-
+        
         .project-card::before {
             content: '';
             position: absolute;
@@ -524,29 +514,29 @@
             height: 5px;
             background: linear-gradient(90deg, var(--primary), var(--secondary));
         }
-
+        
         .project-card:hover {
             transform: translateY(-15px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
         }
-
+        
         .project-img-container {
             height: 220px;
             overflow: hidden;
             position: relative;
         }
-
+        
         .project-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
         }
-
+        
         .project-card:hover .project-img {
             transform: scale(1.1);
         }
-
+        
         .project-badge {
             position: absolute;
             top: 15px;
@@ -558,17 +548,17 @@
             font-size: 0.8rem;
             font-weight: 600;
         }
-
+        
         .project-body {
             padding: 1.5rem;
         }
-
+        
         .project-title {
             font-weight: 700;
             color: var(--primary);
             margin-bottom: 1rem;
         }
-
+        
         .project-btn {
             background-color: var(--primary);
             color: white;
@@ -580,7 +570,7 @@
             position: relative;
             overflow: hidden;
         }
-
+        
         .project-btn::before {
             content: '';
             position: absolute;
@@ -591,17 +581,17 @@
             background: rgba(255, 255, 255, 0.2);
             transition: left 0.5s ease;
         }
-
+        
         .project-btn:hover::before {
             left: 0;
         }
-
+        
         .project-btn:hover {
             background-color: var(--primary-dark);
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(103, 80, 164, 0.3);
         }
-
+        
         /* Organisasi */
         .org-card {
             background-color: white;
@@ -613,7 +603,7 @@
             position: relative;
             overflow: hidden;
         }
-
+        
         .org-card::before {
             content: '';
             position: absolute;
@@ -626,12 +616,12 @@
             opacity: 0.5;
             z-index: 0;
         }
-
+        
         .org-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
         }
-
+        
         .org-img {
             width: 100px;
             height: 100px;
@@ -642,7 +632,7 @@
             position: relative;
             z-index: 1;
         }
-
+        
         .org-title {
             font-weight: 700;
             color: var(--primary);
@@ -650,7 +640,7 @@
             position: relative;
             z-index: 1;
         }
-
+        
         .org-position {
             color: var(--secondary);
             font-weight: 600;
@@ -658,7 +648,7 @@
             position: relative;
             z-index: 1;
         }
-
+        
         /* Sertifikat */
         .cert-container {
             display: flex;
@@ -667,7 +657,7 @@
             gap: 1.5rem;
             margin-top: 3rem;
         }
-
+        
         .cert-item {
             background-color: white;
             border-radius: 1rem;
@@ -678,12 +668,12 @@
             box-shadow: 0 5px 15px var(--shadow);
             transition: all 0.3s ease;
         }
-
+        
         .cert-item:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
         }
-
+        
         .cert-img {
             width: 100%;
             height: 200px;
@@ -695,23 +685,23 @@
             background-color: #f8f9fa;
             padding: 10px;
         }
-
+        
         .cert-item:hover .cert-img {
             transform: scale(1.05);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
         }
-
+        
         .cert-title {
             font-weight: 600;
             margin-bottom: 0.5rem;
             color: var(--primary);
         }
-
+        
         .cert-issuer {
             color: #6c757d;
             font-size: 0.9rem;
         }
-
+        
         /* Kontak */
         .contact-container {
             background-color: white;
@@ -719,62 +709,150 @@
             padding: 3rem;
             box-shadow: 0 5px 15px var(--shadow);
         }
-
+        
+        .contact-card {
+            background-color: var(--accent-light);
+            border-radius: 1rem;
+            padding: 2rem;
+            height: 100%;
+        }
+        
         .contact-item {
-            margin-bottom: 1.5rem;
             display: flex;
             align-items: center;
+            margin-bottom: 2rem;
             transition: all 0.3s ease;
+            padding: 1rem;
+            border-radius: 0.8rem;
         }
-
+        
+        .contact-item:last-child {
+            margin-bottom: 0;
+        }
+        
         .contact-item:hover {
+            background-color: white;
             transform: translateX(10px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
-
+        
         .contact-icon {
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             background-color: var(--primary);
             color: white;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 1rem;
-            font-size: 1.2rem;
+            margin-right: 1.5rem;
+            font-size: 1.5rem;
             transition: all 0.3s ease;
+            flex-shrink: 0;
         }
-
+        
         .contact-item:hover .contact-icon {
             background-color: var(--secondary);
             transform: scale(1.1);
         }
-
-        .contact-text {
-            font-size: 1rem;
+        
+        .contact-text h5 {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+            font-size: 1.1rem;
         }
-
+        
+        .contact-text a {
+            color: var(--on-surface);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-text a:hover {
+            color: var(--primary);
+        }
+        
+        /* Social Card */
+        .social-card {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 1rem;
+            padding: 2rem;
+            height: 100%;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .social-card::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 150px;
+            height: 150px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            z-index: 0;
+        }
+        
+        .social-card::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            left: -30px;
+            width: 100px;
+            height: 100px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            z-index: 0;
+        }
+        
+        .social-title {
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .social-subtitle {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+        
         .social-links {
             display: flex;
             justify-content: center;
-            margin-top: 2rem;
-            gap: 1rem;
+            gap: 1.5rem;
+            position: relative;
+            z-index: 1;
         }
-
+        
         .social-link {
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             color: white;
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            background-color: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
         }
-
+        
         .social-link::before {
             content: '';
             position: absolute;
@@ -786,28 +864,47 @@
             transform: rotate(45deg) translateY(-100%);
             transition: transform 0.5s ease;
         }
-
+        
         .social-link:hover::before {
             transform: rotate(45deg) translateY(0);
         }
-
+        
         .social-link:hover {
-            transform: translateY(-8px) rotate(15deg);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
         }
-
+        
+        /* Social link specific colors */
+        .social-link.github:hover {
+            background-color: #333;
+        }
+        
+        .social-link.vercel:hover {
+            background-color: #000;
+        }
+        
+        .social-link.instagram:hover {
+            background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+        }
+        
+        .social-link.tiktok:hover {
+            background-color: #000;
+            border: 1px solid #25F4EE;
+        }
+        
         /* Footer */
-        footer {
-            background-color: #1C1B1F;
-            color: white;
-            padding: 3rem 1rem;
-            text-align: center;
-            border-top-left-radius: 2rem;
-            border-top-right-radius: 2rem;
+        footer { 
+            background-color: #1C1B1F; 
+            color: white; 
+            padding: 3rem 1rem; 
+            text-align: center; 
+            border-top-left-radius: 2rem; 
+            border-top-right-radius: 2rem; 
             position: relative;
             overflow: hidden;
+            margin-top: 3rem;
         }
-
+        
         footer::before {
             content: '';
             position: absolute;
@@ -817,80 +914,71 @@
             height: 5px;
             background: linear-gradient(90deg, var(--primary), var(--secondary));
         }
-
+        
         .footer-text {
             margin-bottom: 1rem;
         }
-
+        
         .footer-heart {
             color: #e74c3c;
             animation: pulse 1.5s infinite;
         }
-
+        
         @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.2);
-            }
-
-            100% {
-                transform: scale(1);
-            }
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
         }
-
+        
         .footer-social {
             margin-top: 1.5rem;
         }
-
+        
         .footer-social a {
             color: white;
             margin: 0 10px;
             font-size: 1.2rem;
             transition: all 0.3s ease;
+            display: inline-block;
         }
-
+        
         .footer-social a:hover {
             color: var(--accent);
             transform: translateY(-3px);
         }
-
+        
         /* Animasi Scroll */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 0.6s ease, transform 0.6s ease;
         }
-
+        
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
-
+        
         /* Responsive */
         @media (max-width: 992px) {
             .skill-item {
                 width: calc(50% - 1.5rem);
             }
-
             .cert-item {
                 width: calc(50% - 1.5rem);
             }
         }
-
-        @media (max-width: 767px) {
-
+        
+        @media (max-width: 767px) { 
             /* Header */
             header {
                 padding: 0.8rem 0;
             }
-
+            
             .navbar-brand {
                 font-size: 1.3rem;
             }
-
+            
             /* Navbar Mobile */
             .navbar-collapse {
                 background-color: var(--primary);
@@ -898,199 +986,205 @@
                 border-radius: 0.5rem;
                 margin-top: 0.5rem;
             }
-
+            
             .navbar-nav {
                 flex-direction: column;
                 align-items: flex-start;
             }
-
+            
             .nav-link {
                 margin: 0.3rem 0;
                 padding: 0.5rem 0;
             }
-
+            
             /* Hero Section */
-            .hero {
-                padding: 6rem 1rem 4rem;
-            }
-
+            .hero { 
+                padding: 6rem 1rem 4rem; 
+            } 
+            
             .hero img {
                 width: 120px;
                 height: 120px;
             }
-
+            
             .hero-description {
                 font-size: 1rem;
                 margin: 1rem auto 1.5rem;
             }
-
+            
             /* Section */
             section {
                 padding: 3rem 1rem;
             }
-
+            
             .section-title {
                 font-size: 1.5rem;
             }
-
+            
             .section-subtitle {
                 font-size: 0.9rem;
                 margin-bottom: 2rem;
             }
-
+            
             /* About Section */
             .about-section {
                 padding: 2rem;
                 margin-bottom: 2rem;
             }
-
+            
             .about-section h3 {
                 font-size: 1.2rem;
             }
-
+            
             .about-section p {
                 font-size: 0.9rem;
             }
-
+            
             /* Skills */
             .skill-item {
                 width: calc(50% - 1rem);
                 min-width: 150px;
                 padding: 1.2rem;
             }
-
+            
             .skill-icon {
                 font-size: 2rem;
                 height: 50px;
             }
-
+            
             .skill-name {
                 font-size: 1rem;
             }
-
+            
             /* Projects */
             .project-img-container {
                 height: 180px;
             }
-
+            
             .project-body {
                 padding: 1.2rem;
             }
-
+            
             .project-title {
                 font-size: 1.1rem;
                 margin-bottom: 0.8rem;
             }
-
+            
             .project-btn {
                 padding: 0.4rem 1.2rem;
                 font-size: 0.9rem;
             }
-
+            
             /* Organization */
             .org-card {
                 padding: 1.5rem;
             }
-
+            
             .org-img {
                 width: 80px;
                 height: 80px;
             }
-
+            
             .org-title {
                 font-size: 1.1rem;
             }
-
+            
             .org-position {
                 font-size: 0.9rem;
             }
-
+            
             /* Certificates */
             .cert-item {
                 width: calc(50% - 1rem);
                 padding: 1.2rem;
             }
-
+            
             .cert-img {
                 height: 150px;
             }
-
+            
             .cert-title {
                 font-size: 1rem;
             }
-
+            
             /* Contact */
             .contact-container {
                 padding: 2rem;
             }
-
+            
+            .contact-card {
+                margin-bottom: 2rem;
+            }
+            
             .contact-item {
-                margin-bottom: 1.2rem;
+                margin-bottom: 1.5rem;
             }
-
+            
             .contact-icon {
-                width: 45px;
-                height: 45px;
-                font-size: 1.1rem;
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+                margin-right: 1rem;
             }
-
-            .contact-text {
-                font-size: 1rem;
-            }
-
+            
             .social-link {
-                width: 45px;
-                height: 45px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+            
+            .social-title {
                 font-size: 1.3rem;
             }
-
+            
+            .social-subtitle {
+                font-size: 0.9rem;
+                margin-bottom: 1.5rem;
+            }
+            
             /* Footer */
             footer {
                 padding: 2rem 1rem;
             }
-
+            
             .footer-text {
                 font-size: 0.9rem;
             }
-        }
-
+        } 
+        
         @media (max-width: 576px) {
-
             /* Skills */
             .skill-item {
                 width: 100%;
             }
-
+            
             /* Certificates */
             .cert-item {
                 width: 100%;
             }
-
+            
             /* Navbar profile for mobile */
             .navbar-profile {
                 width: 30px;
                 height: 30px;
             }
         }
-    </style>
-</head>
-
-<body>
+    </style> 
+</head> 
+<body> 
     <!-- Loader -->
     <div class="loader-wrapper">
         <div class="loader"></div>
     </div>
-    <!-- Header -->
-    <header>
+    <!-- Header --> 
+    <header> 
         <nav class="navbar navbar-expand-lg">
-            <div class="container">
+            <div class="container"> 
                 <div class="d-flex align-items-center">
                     <img src="/img/foto.png" alt="Foto Profil" class="navbar-profile">
                     <a class="navbar-brand mb-0" href="#">RINDA</a>
                 </div>
-                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                    aria-label="Toggle navigation">
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon">
                         <span></span>
                         <span></span>
@@ -1122,45 +1216,34 @@
             </div>
         </nav>
     </header>
-    <!-- Hero Section -->
-    <section class="hero" id="beranda">
+    <!-- Hero Section --> 
+    <section class="hero" id="beranda"> 
         <div class="hero-content">
-            <img src="/img/foto.png" alt="Foto Profil"
-                class="rounded-circle mb-3 animate__animated animate__zoomIn hero-profile" width="150">
-            <p class="hero-description animate__animated animate__fadeInUp animate__delay-1s">Siswa PPLG | Siap Magang
-                di Dunia Industri Digital</p>
+            <img src="/img/foto.png" alt="Foto Profil" class="rounded-circle mb-3 animate__animated animate__zoomIn hero-profile" width="150"> 
+            <p class="hero-description animate__animated animate__fadeInUp animate__delay-1s">Siswa PPLG | Siap Magang di Dunia Industri Digital</p> 
         </div>
-    </section>
-    <!-- Tentang Saya -->
-    <section class="container" id="tentang">
+    </section> 
+    <!-- Tentang Saya --> 
+    <section class="container" id="tentang"> 
         <div class="text-center mb-5">
             <h2 class="section-title fade-in">Tentang Saya</h2>
             <p class="section-subtitle fade-in">Kenali lebih dekat tentang saya dan tujuan karir saya</p>
         </div>
-
+        
         <div class="about-section fade-in">
             <h3 class="mb-3">Profil</h3>
-            <p class="lead">Saya Rinda, siswa kelas XII PPLG 2 di SMKN 1 Kawali, dengan minat dan keahlian di bidang
-                Pengembangan Perangkat Lunak dan Gim (PPLG). Saya memiliki ketertarikan besar dalam dunia coding, serta
-                terbiasa memperbaiki berbagai perangkat elektronik secara mandiri. Selain itu, saya juga gemar
-                mendengarkan musik sebagai sarana relaksasi dan inspirasi. Saya dikenal sebagai pribadi yang tekun, suka
-                belajar hal baru, dan memiliki semangat tinggi dalam menyelesaikan tugas maupun proyek. Ke depannya,
-                saya berharap dapat terus mengembangkan keterampilan di bidang teknologi serta berkontribusi dalam
-                menciptakan solusi digital yang bermanfaat.</p>
+            <p class="lead">Saya Rinda, siswa kelas XII PPLG 2 di SMKN 1 Kawali, dengan minat dan keahlian di bidang Pengembangan Perangkat Lunak dan Gim (PPLG). Saya memiliki ketertarikan besar dalam dunia coding, serta terbiasa memperbaiki berbagai perangkat elektronik secara mandiri. Selain itu, saya juga gemar mendengarkan musik sebagai sarana relaksasi dan inspirasi. Saya dikenal sebagai pribadi yang tekun, suka belajar hal baru, dan memiliki semangat tinggi dalam menyelesaikan tugas maupun proyek. Ke depannya, saya berharap dapat terus mengembangkan keterampilan di bidang teknologi serta berkontribusi dalam menciptakan solusi digital yang bermanfaat.</p> 
             <h3 class="mb-3 mt-4">Tujuan PKL</h3>
-            <p class="lead"> Saya mengikuti Praktik Kerja Lapangan (PKL) di PT Inovindo Digital Media untuk memperluas
-                wawasan dan pengalaman dalam dunia industri digital, khususnya di bidang pengembangan web dan perangkat
-                lunak. Saya berharap dapat belajar secara langsung dari profesional di bidangnya serta berkontribusi
-                sesuai dengan kemampuan saya. </p>
+            <p class="lead"> Saya mengikuti Praktik Kerja Lapangan (PKL) di PT Inovindo Digital Media untuk memperluas wawasan dan pengalaman dalam dunia industri digital, khususnya di bidang pengembangan web dan perangkat lunak. Saya berharap dapat belajar secara langsung dari profesional di bidangnya serta berkontribusi sesuai dengan kemampuan saya. </p> 
         </div>
-    </section>
-    <!-- Skills -->
-    <section class="container" id="keahlian">
+    </section> 
+    <!-- Skills --> 
+    <section class="container" id="keahlian"> 
         <div class="text-center mb-5">
             <h2 class="section-title fade-in">Keahlian</h2>
             <p class="section-subtitle fade-in">Kemampuan teknis yang saya kuasai</p>
         </div>
-
+        
         <div class="skills-container">
             <div class="skill-item fade-in">
                 <div class="skill-icon">
@@ -1182,8 +1265,7 @@
             </div>
             <div class="skill-item fade-in">
                 <div class="skill-icon">
-                    <img src="https://z-cdn-media.chatglm.cn/files/92453340-8bc2-4f9d-bccd-98172a8d1966_download.png?auth_key=1788174823-abc1592cf4fd4215b516e997ca0395c4-0-647976136d673ac3c755ffc5ce4f4f9d"
-                        alt="Laravel" class="laravel-logo">
+                    <img src="https://z-cdn-media.chatglm.cn/files/92453340-8bc2-4f9d-bccd-98172a8d1966_download.png?auth_key=1788174823-abc1592cf4fd4215b516e997ca0395c4-0-647976136d673ac3c755ffc5ce4f4f9d" alt="Laravel" class="laravel-logo">
                 </div>
                 <div class="skill-name">Laravel</div>
             </div>
@@ -1212,110 +1294,101 @@
                 <div class="skill-name">PowerPoint</div>
             </div>
         </div>
-    </section>
-    <!-- Proyek -->
-    <section class="container" id="proyek">
+    </section> 
+    <!-- Proyek --> 
+    <section class="container" id="proyek"> 
         <div class="text-center mb-5">
             <h2 class="section-title fade-in">Proyek Saya</h2>
             <p class="section-subtitle fade-in">Beberapa proyek yang telah saya kerjakan</p>
         </div>
-
-        <div class="row g-4">
-            <div class="col-md-4 fade-in">
-                <div class="project-card">
+        
+        <div class="row g-4"> 
+            <div class="col-md-4 fade-in"> 
+                <div class="project-card"> 
                     <div class="project-img-container">
-                        <img src="/img/proyek1.jpg" class="project-img" alt="Proyek 1">
+                        <img src="/img/proyek1.jpg" class="project-img" alt="Proyek 1"> 
                         <div class="project-badge">Game</div>
                     </div>
-                    <div class="project-body">
-                        <h5 class="project-title">Game Quiz</h5>
-                        <p class="card-text">"Quiz Sejarah Indonesia" adalah game edukatif interaktif yang dirancang
-                            untuk menguji dan meningkatkan wawasan sejarah bangsa. Cocok untuk pelajar, guru, dan siapa
-                            saja yang ingin belajar sejarah dengan cara menyenangkan.</p>
-                        <a href="Quis Sejarah.apk" class="btn project-btn">Lihat</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 fade-in">
-                <div class="project-card">
+                    <div class="project-body"> 
+                        <h5 class="project-title">Game Quiz</h5> 
+                        <p class="card-text">"Quiz Sejarah Indonesia" adalah game edukatif interaktif yang dirancang untuk menguji dan meningkatkan wawasan sejarah bangsa. Cocok untuk pelajar, guru, dan siapa saja yang ingin belajar sejarah dengan cara menyenangkan.</p> 
+                        <a href="Quis Sejarah.apk" class="btn project-btn">Lihat</a> 
+                    </div> 
+                </div> 
+            </div> 
+            <div class="col-md-4 fade-in"> 
+                <div class="project-card"> 
                     <div class="project-img-container">
-                        <img src="/img/proyek2.png" class="project-img" alt="Proyek 2">
+                        <img src="/img/proyek2.png" class="project-img" alt="Proyek 2"> 
                         <div class="project-badge">Web App</div>
                     </div>
-                    <div class="project-body">
-                        <h5 class="project-title">Web Pembuatan Kartu</h5>
-                        <p class="card-text">Repositori ini berisi aplikasi Python sederhana untuk membuat kartu absen
-                            anggota himpunan secara otomatis. Program ini membaca data dari file Excel dan menghasilkan
-                            file kartu absen dalam format gambar (PNG) secara massal.</p>
-                        <a href="https://github.com/AR210108/py-kartu-absen-himpunan" class="btn project-btn">Lihat</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 fade-in">
-                <div class="project-card">
+                    <div class="project-body"> 
+                        <h5 class="project-title">Web Pembuatan Kartu</h5> 
+                        <p class="card-text">Repositori ini berisi aplikasi Python sederhana untuk membuat kartu absen anggota himpunan secara otomatis. Program ini membaca data dari file Excel dan menghasilkan file kartu absen dalam format gambar (PNG) secara massal.</p> 
+                        <a href="https://github.com/AR210108/py-kartu-absen-himpunan" class="btn project-btn">Lihat</a> 
+                    </div> 
+                </div> 
+            </div> 
+            <div class="col-md-4 fade-in"> 
+                <div class="project-card"> 
                     <div class="project-img-container">
-                        <img src="/img/proyek3.png" class="project-img" alt="Proyek 3">
+                        <img src="/img/proyek3.png" class="project-img" alt="Proyek 3"> 
                         <div class="project-badge">Website</div>
                     </div>
-                    <div class="project-body">
-                        <h5 class="project-title">Web Sistem Informasi Desa</h5>
-                        <p class="card-text">Website Sistem Informasi Desa ini dirancang sebagai platform digital yang
-                            mempermudah penyampaian informasi desa kepada masyarakat. Proyek ini saya buat sebagai
-                            latihan dalam pengembangan web berbasis bootstrap dengan tampilan modern dan responsif.</p>
-                        <a href="https://github.com/AR210108/webdest" class="btn project-btn">Lihat</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 fade-in">
-                <div class="project-card">
+                    <div class="project-body"> 
+                        <h5 class="project-title">Web Sistem Informasi Desa</h5> 
+                        <p class="card-text">Website Sistem Informasi Desa ini dirancang sebagai platform digital yang mempermudah penyampaian informasi desa kepada masyarakat. Proyek ini saya buat sebagai latihan dalam pengembangan web berbasis bootstrap dengan tampilan modern dan responsif.</p> 
+                        <a href="https://github.com/AR210108/webdest" class="btn project-btn">Lihat</a> 
+                    </div> 
+                </div> 
+            </div> 
+            <div class="col-md-4 fade-in"> 
+                <div class="project-card"> 
                     <div class="project-img-container">
-                        <img src="/img/proyek4.png" class="project-img" alt="Proyek 4">
+                        <img src="/img/proyek4.png" class="project-img" alt="Proyek 4"> 
                         <div class="project-badge">Website</div>
                     </div>
-                    <div class="project-body">
-                        <h5 class="project-title">Web Sistem Absensi Eskul</h5>
-                        <p class="card-text">web yang dirancang untuk memudahkan proses absensi kegiatan ekstrakurikuler
-                            (AE) di sekolah. Sistem ini memiliki dua jenis pengguna utama, yaitu siswa dan admin, dengan
-                            fitur yang disesuaikan sesuai kebutuhan masing-masing</p>
-                        <a href="https://github.com/AR210108/AE-Absensi_Exit-" class="btn project-btn">Lihat</a>
-                    </div>
-                </div>
+                    <div class="project-body"> 
+                        <h5 class="project-title">Web Sistem Absensi Eskul</h5> 
+                        <p class="card-text">web yang dirancang untuk memudahkan proses absensi kegiatan ekstrakurikuler (AE) di sekolah. Sistem ini memiliki dua jenis pengguna utama, yaitu siswa dan admin, dengan fitur yang disesuaikan sesuai kebutuhan masing-masing</p> 
+                        <a href="https://github.com/AR210108/AE-Absensi_Exit-" class="btn project-btn">Lihat</a> 
+                    </div> 
+                </div> 
             </div>
-        </div>
-    </section>
-    <!-- Organisasi -->
-    <section class="container" id="organisasi">
+        </div> 
+    </section> 
+    <!-- Organisasi --> 
+    <section class="container" id="organisasi"> 
         <div class="text-center mb-5">
             <h2 class="section-title fade-in">Organisasi & Eskul</h2>
             <p class="section-subtitle fade-in">Pengalaman organisasi dan kegiatan ekstrakurikuler</p>
         </div>
-
-        <div class="row g-4">
-            <div class="col-md-6 fade-in">
-                <div class="org-card">
-                    <img src="/img/Exit.png" alt="EXIT" class="org-img">
-                    <h5 class="org-title">Ekstrakurikuler Informasi dan Teknologi (EXIT)</h5>
-                    <h6 class="org-position">Ketua Divisi ICT</h6>
-                    <p>Bertugas membenarkan komputer apabila ada yang bermasalah, atau jaringan tidak ada.</p>
-                </div>
-            </div>
-            <div class="col-md-6 fade-in">
-                <div class="org-card">
-                    <img src="/img/himpunan.png" alt="Himpunan PPLG" class="org-img">
-                    <h5 class="org-title">Himpunan PPLG (Pengembangan Perangkatlunak Dan GIM)</h5>
-                    <h6 class="org-position">Anggota Divisi Korlap</h6>
-                    <p>Saya bertugas menyiapkan peralatan untuk apel, dan mempersiapkan apabila akan ada acara di PPLG.
-                    </p>
-                </div>
-            </div>
+        
+        <div class="row g-4"> 
+            <div class="col-md-6 fade-in"> 
+                <div class="org-card"> 
+                    <img src="/img/Exit.png" alt="EXIT" class="org-img"> 
+                    <h5 class="org-title">Ekstrakurikuler Informasi dan Teknologi (EXIT)</h5> 
+                    <h6 class="org-position">Ketua Divisi ICT</h6> 
+                    <p>Bertugas membenarkan komputer apabila ada yang bermasalah, atau jaringan tidak ada.</p> 
+                </div> 
+            </div> 
+            <div class="col-md-6 fade-in"> 
+                <div class="org-card"> 
+                    <img src="/img/himpunan.png" alt="Himpunan PPLG" class="org-img"> 
+                    <h5 class="org-title">Himpunan PPLG (Pengembangan Perangkatlunak Dan GIM)</h5> 
+                    <h6 class="org-position">Anggota Divisi Korlap</h6> 
+                    <p>Saya bertugas menyiapkan peralatan untuk apel, dan mempersiapkan apabila akan ada acara di PPLG.</p> 
+                </div> 
+            </div> 
         </div>
-
+        
         <!-- Sertifikat -->
         <div class="text-center mt-5">
             <h2 class="section-title fade-in">Sertifikat & Pencapaian</h2>
             <p class="section-subtitle fade-in">Sertifikat yang telah saya peroleh</p>
         </div>
-
+        
         <div class="cert-container">
             <div class="cert-item fade-in">
                 <img src="/img/sertifikat/sertifikat1.png" alt="Sertifikat Web Development" class="cert-img">
@@ -1328,36 +1401,44 @@
                 <p class="cert-issuer">SMKN 1 Kawali</p>
             </div>
         </div>
-    </section>
-    <!-- Kontak -->
-    <section class="container" id="kontak">
+    </section> 
+    <!-- Kontak --> 
+    <section class="container" id="kontak"> 
         <div class="text-center mb-5">
             <h2 class="section-title fade-in">Kontak</h2>
             <p class="section-subtitle fade-in">Hubungi saya untuk kolaborasi atau informasi lebih lanjut</p>
         </div>
-
+        
         <div class="contact-container fade-in">
-            <div class="contact-item">
-                <div class="contact-icon">
-                    <i class="bi bi-envelope"></i>
-                </div>
-                <div class="contact-text">
-                    <strong>Email:</strong> <a href="mailto:rinda2101rinda@gmail.com">rinda2101rinda@gmail.com</a>
-                </div>
-            </div>
-
-            <div class="contact-item">
-                <div class="contact-icon">
-                    <i class="bi bi-whatsapp"></i>
-                </div>
-                <div class="contact-text">
-                    <strong>WhatsApp:</strong> <a href="https://wa.me/6281214137112" target="_blank">0812-1413-7112</a>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="contact-card">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="bi bi-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h5>Email</h5>
+                                <a href="mailto:rinda2101rinda@gmail.com">rinda2101rinda@gmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="bi bi-whatsapp"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h5>WhatsApp</h5>
+                                <a href="https://wa.me/6281214137112" target="_blank">0812-1413-7112</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- Footer -->
-    <footer>
+    </section> 
+    <!-- Footer --> 
+    <footer> 
         <p class="footer-text">&copy; 2025 Rinda. All rights reserved.</p>
         <div class="footer-social">
             <a href="https://github.com/AR210108"><i class="bi bi-github"></i></a>
@@ -1365,29 +1446,29 @@
             <a href="https://instagram.com/Aseprinda2101"><i class="bi bi-instagram"></i></a>
             <a href="https://tiktok.com/@rinnnn_2101"><i class="bi bi-tiktok"></i></a>
         </div>
-    </footer>
+    </footer> 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         // Preloader
-        window.addEventListener('load', function () {
-            setTimeout(function () {
+        window.addEventListener('load', function() {
+            setTimeout(function() {
                 document.querySelector('.loader-wrapper').classList.add('hidden');
             }, 1000);
         });
-
+        
         // Header scroll effect dan foto profil
-        window.addEventListener('scroll', function () {
+        window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
             const heroSection = document.querySelector('.hero');
             const heroProfile = document.querySelector('.hero-profile');
             const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
-
+            
             if (window.scrollY > 50) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
             }
-
+            
             // Tampilkan foto profil di navbar saat hero section tidak terlihat
             if (window.scrollY > heroBottom - 100) {
                 header.classList.add('show-profile');
@@ -1397,10 +1478,10 @@
                 heroProfile.classList.remove('fade-out');
             }
         });
-
+        
         // Smooth scrolling untuk link navigasi
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
@@ -1408,7 +1489,7 @@
                         top: target.offsetTop - 80,
                         behavior: 'smooth'
                     });
-
+                    
                     // Tutup menu mobile setelah klik
                     const navbarCollapse = document.querySelector('.navbar-collapse');
                     if (navbarCollapse.classList.contains('show')) {
@@ -1418,11 +1499,11 @@
                 }
             });
         });
-
+        
         // Animasi saat scroll
         const fadeElements = document.querySelectorAll('.fade-in');
-
-        const fadeInObserver = new IntersectionObserver(function (entries) {
+        
+        const fadeInObserver = new IntersectionObserver(function(entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
@@ -1432,19 +1513,16 @@
             threshold: 0.1,
             rootMargin: '0px 0px -100px 0px'
         });
-
+        
         fadeElements.forEach(element => {
             fadeInObserver.observe(element);
         });
-
+        
         // Animasi untuk skill items dengan delay bertingkat
         const skillItems = document.querySelectorAll('.skill-item');
         skillItems.forEach((item, index) => {
             item.style.transitionDelay = `${index * 0.1}s`;
         });
     </script>
-</body>
-
+</body> 
 </html>
-
-
