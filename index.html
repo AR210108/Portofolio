@@ -708,13 +708,14 @@
             border-radius: 1rem;
             padding: 3rem;
             box-shadow: 0 5px 15px var(--shadow);
+            max-width: 800px;
+            margin: 0 auto;
         }
         
         .contact-card {
             background-color: var(--accent-light);
             border-radius: 1rem;
             padding: 2rem;
-            height: 100%;
         }
         
         .contact-item {
@@ -768,128 +769,12 @@
             text-decoration: none;
             font-size: 1rem;
             transition: all 0.3s ease;
+            word-break: break-all;
+            display: inline-block;
         }
         
         .contact-text a:hover {
             color: var(--primary);
-        }
-        
-        /* Social Card */
-        .social-card {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius: 1rem;
-            padding: 2rem;
-            height: 100%;
-            color: white;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .social-card::before {
-            content: '';
-            position: absolute;
-            top: -50px;
-            right: -50px;
-            width: 150px;
-            height: 150px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            z-index: 0;
-        }
-        
-        .social-card::after {
-            content: '';
-            position: absolute;
-            bottom: -30px;
-            left: -30px;
-            width: 100px;
-            height: 100px;
-            background-color: rgba(255, 255, 255, 0.05);
-            border-radius: 50%;
-            z-index: 0;
-        }
-        
-        .social-title {
-            font-weight: 700;
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .social-subtitle {
-            font-size: 1rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .social-link {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            color: white;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            background-color: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(5px);
-        }
-        
-        .social-link::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.2);
-            transform: rotate(45deg) translateY(-100%);
-            transition: transform 0.5s ease;
-        }
-        
-        .social-link:hover::before {
-            transform: rotate(45deg) translateY(0);
-        }
-        
-        .social-link:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-        }
-        
-        /* Social link specific colors */
-        .social-link.github:hover {
-            background-color: #333;
-        }
-        
-        .social-link.vercel:hover {
-            background-color: #000;
-        }
-        
-        .social-link.instagram:hover {
-            background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
-        }
-        
-        .social-link.tiktok:hover {
-            background-color: #000;
-            border: 1px solid #25F4EE;
         }
         
         /* Footer */
@@ -966,6 +851,15 @@
             }
             .cert-item {
                 width: calc(50% - 1.5rem);
+            }
+            
+            .contact-container {
+                padding: 2.5rem;
+                max-width: 700px;
+            }
+            
+            .contact-card {
+                padding: 1.8rem;
             }
         }
         
@@ -1110,14 +1004,12 @@
             /* Contact */
             .contact-container {
                 padding: 2rem;
-            }
-            
-            .contact-card {
-                margin-bottom: 2rem;
+                max-width: 100%;
             }
             
             .contact-item {
                 margin-bottom: 1.5rem;
+                padding: 0.8rem;
             }
             
             .contact-icon {
@@ -1127,19 +1019,13 @@
                 margin-right: 1rem;
             }
             
-            .social-link {
-                width: 50px;
-                height: 50px;
-                font-size: 1.5rem;
+            .contact-text h5 {
+                font-size: 1rem;
+                margin-bottom: 0.2rem;
             }
             
-            .social-title {
-                font-size: 1.3rem;
-            }
-            
-            .social-subtitle {
+            .contact-text a {
                 font-size: 0.9rem;
-                margin-bottom: 1.5rem;
             }
             
             /* Footer */
@@ -1167,6 +1053,75 @@
             .navbar-profile {
                 width: 30px;
                 height: 30px;
+            }
+            
+            /* Contact */
+            .contact-container {
+                padding: 1.5rem;
+            }
+            
+            .contact-card {
+                padding: 1.2rem;
+            }
+            
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+                padding: 1rem;
+            }
+            
+            .contact-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+            
+            .contact-item:hover {
+                transform: translateY(-5px);
+            }
+            
+            .contact-text {
+                width: 100%;
+            }
+            
+            .contact-text h5 {
+                font-size: 1.1rem;
+            }
+            
+            .contact-text a {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 380px) {
+            /* Contact */
+            .contact-container {
+                padding: 1.2rem;
+            }
+            
+            .contact-card {
+                padding: 1rem;
+            }
+            
+            .contact-item {
+                padding: 0.8rem;
+            }
+            
+            .contact-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
+                margin-bottom: 0.8rem;
+            }
+            
+            .contact-text h5 {
+                font-size: 1rem;
+            }
+            
+            .contact-text a {
+                font-size: 0.9rem;
             }
         }
     </style> 
@@ -1410,28 +1365,24 @@
         </div>
         
         <div class="contact-container fade-in">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="contact-card">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="bi bi-envelope"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h5>Email</h5>
-                                <a href="mailto:rinda2101rinda@gmail.com">rinda2101rinda@gmail.com</a>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="bi bi-whatsapp"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h5>WhatsApp</h5>
-                                <a href="https://wa.me/6281214137112" target="_blank">0812-1413-7112</a>
-                            </div>
-                        </div>
+            <div class="contact-card">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="bi bi-envelope"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h5>Email</h5>
+                        <a href="mailto:rinda2101rinda@gmail.com">rinda2101rinda@gmail.com</a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="bi bi-whatsapp"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h5>WhatsApp</h5>
+                        <a href="https://wa.me/6281214137112" target="_blank">0812-1413-7112</a>
                     </div>
                 </div>
             </div>
