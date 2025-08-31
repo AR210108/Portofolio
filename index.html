@@ -179,7 +179,6 @@
             border: 5px solid white; 
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); 
             transition: all 0.5s ease;
-            /* Menghapus animasi float sesuai permintaan */
         }
         
         .hero img:hover {
@@ -187,26 +186,7 @@
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
         }
         
-        .hero h2 {
-            font-weight: 700;
-            margin-top: 1.5rem;
-            animation: fadeInUp 1s ease;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .hero h2::after {
-            content: '';
-            position: absolute;
-            width: 50%;
-            height: 3px;
-            background-color: var(--accent);
-            bottom: -10px;
-            left: 25%;
-            border-radius: 2px;
-        }
-        
-        .hero p {
+        .hero-description {
             font-size: 1.2rem;
             max-width: 600px;
             margin: 1.5rem auto 2rem;
@@ -215,6 +195,7 @@
         
         .hero-buttons {
             animation: fadeInUp 1s ease 0.6s both;
+            margin-top: 2rem;
         }
         
         .btn-hero {
@@ -398,6 +379,10 @@
             color: var(--primary);
             margin-bottom: 1rem;
             transition: all 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 60px;
         }
         
         .skill-item:hover .skill-icon {
@@ -408,6 +393,12 @@
         .skill-name {
             font-weight: 600;
             font-size: 1.1rem;
+        }
+        
+        /* Logo Laravel */
+        .laravel-logo {
+            width: 50px;
+            height: auto;
         }
         
         /* Proyek */
@@ -767,31 +758,182 @@
         }
         
         @media (max-width: 767px) { 
+            /* Header */
+            header {
+                padding: 0.8rem 0;
+            }
+            
+            .navbar-brand {
+                font-size: 1.3rem;
+            }
+            
+            nav {
+                display: flex;
+                justify-content: center;
+                margin-top: 0.5rem;
+            }
+            
+            nav a {
+                margin: 0 0.5rem;
+                font-size: 0.9rem;
+            }
+            
+            /* Hero Section */
             .hero { 
-                padding: 7rem 1rem 4rem; 
+                padding: 6rem 1rem 4rem; 
             } 
-            .hero h2 { 
-                font-size: 1.8rem; 
-            } 
-            .hero p { 
-                font-size: 1rem; 
-            } 
-            nav a { 
-                display: inline-block; 
-                margin: 0.3rem; 
-            } 
-            .btn { 
-                display: block; 
-                width: 100%; 
-                margin: 0.5rem 0; 
-            } 
+            
+            .hero img {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .hero-description {
+                font-size: 1rem;
+                margin: 1rem auto 1.5rem;
+            }
+            
+            /* Section */
+            section {
+                padding: 3rem 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .section-subtitle {
+                font-size: 0.9rem;
+                margin-bottom: 2rem;
+            }
+            
+            /* About Section */
+            .about-section {
+                padding: 2rem;
+                margin-bottom: 2rem;
+            }
+            
+            .about-section h3 {
+                font-size: 1.2rem;
+            }
+            
+            .about-section p {
+                font-size: 0.9rem;
+            }
+            
+            /* Skills */
+            .skill-item {
+                width: calc(50% - 1rem);
+                min-width: 150px;
+                padding: 1.2rem;
+            }
+            
+            .skill-icon {
+                font-size: 2rem;
+                height: 50px;
+            }
+            
+            .skill-name {
+                font-size: 1rem;
+            }
+            
+            /* Projects */
+            .project-img-container {
+                height: 180px;
+            }
+            
+            .project-body {
+                padding: 1.2rem;
+            }
+            
+            .project-title {
+                font-size: 1.1rem;
+                margin-bottom: 0.8rem;
+            }
+            
+            .project-btn {
+                padding: 0.4rem 1.2rem;
+                font-size: 0.9rem;
+            }
+            
+            /* Organization */
+            .org-card {
+                padding: 1.5rem;
+            }
+            
+            .org-img {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .org-title {
+                font-size: 1.1rem;
+            }
+            
+            .org-position {
+                font-size: 0.9rem;
+            }
+            
+            /* Certificates */
+            .cert-item {
+                width: calc(50% - 1rem);
+                padding: 1.2rem;
+            }
+            
+            .cert-icon {
+                font-size: 2.5rem;
+            }
+            
+            .cert-title {
+                font-size: 1rem;
+            }
+            
+            /* Contact */
+            .contact-container {
+                padding: 2rem;
+            }
+            
+            .contact-item {
+                margin-bottom: 1.2rem;
+            }
+            
+            .contact-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 1.1rem;
+            }
+            
+            .contact-text {
+                font-size: 1rem;
+            }
+            
+            .social-link {
+                width: 45px;
+                height: 45px;
+                font-size: 1.3rem;
+            }
+            
+            /* Footer */
+            footer {
+                padding: 2rem 1rem;
+            }
+            
+            .footer-text {
+                font-size: 0.9rem;
+            }
+        } 
+        
+        @media (max-width: 576px) {
+            /* Skills */
             .skill-item {
                 width: 100%;
             }
+            
+            /* Certificates */
             .cert-item {
                 width: 100%;
             }
-        } 
+        }
     </style> 
 </head> 
 <body> 
@@ -802,7 +944,7 @@
 
     <!-- Header --> 
     <header> 
-        <div class="container d-flex justify-content-between align-items-center"> 
+        <div class="container d-flex flex-column align-items-center"> 
             <h1 class="navbar-brand">RINDA</h1> 
             <nav> 
                 <a href="#proyek"><i class="bi bi-window"></i> Proyek</a> 
@@ -815,12 +957,7 @@
     <section class="hero"> 
         <div class="hero-content">
             <img src="/img/foto.png" alt="Foto Profil" class="rounded-circle mb-3 animate__animated animate__zoomIn" width="150"> 
-            <h2 class="animate__animated animate__fadeInUp">RINDA</h2> 
-            <p class="animate__animated animate__fadeInUp animate__delay-1s">Siswa PPLG | Siap Magang di Dunia Industri Digital</p> 
-            <div class="hero-buttons">
-                <a href="#proyek" class="btn btn-hero btn-primary-custom"><span>Lihat Proyek</span></a>
-                <a href="#kontak" class="btn btn-hero btn-outline-custom"><span>Hubungi Saya</span></a>
-            </div>
+            <p class="hero-description animate__animated animate__fadeInUp animate__delay-1s">Siswa PPLG | Siap Magang di Dunia Industri Digital</p> 
         </div>
     </section> 
 
@@ -867,7 +1004,7 @@
             </div>
             <div class="skill-item fade-in">
                 <div class="skill-icon">
-                    <i class="bi bi-laravel"></i>
+                    <img src="https://z-cdn-media.chatglm.cn/files/92453340-8bc2-4f9d-bccd-98172a8d1966_download.png?auth_key=1788174823-abc1592cf4fd4215b516e997ca0395c4-0-647976136d673ac3c755ffc5ce4f4f9d" alt="Laravel" class="laravel-logo">
                 </div>
                 <div class="skill-name">Laravel</div>
             </div>
@@ -1029,21 +1166,6 @@
                 <div class="contact-text">
                     <strong>WhatsApp:</strong> <a href="https://wa.me/6281214137112" target="_blank">0812-1413-7112</a>
                 </div>
-            </div>
-            
-            <div class="social-links">
-                <a href="https://github.com/AR210108" class="social-link" style="background-color: #333;">
-                    <i class="bi bi-github"></i>
-                </a>
-                <a href="https://vercel.com/ar210108" class="social-link" style="background-color: black;">
-                    <i class="bi bi-globe2"></i>
-                </a>
-                <a href="https://instagram.com/Aseprinda2101" class="social-link" style="background-color: #e4405f;">
-                    <i class="bi bi-instagram"></i>
-                </a>
-                <a href="https://tiktok.com/@rinnnn_2101" class="social-link" style="background-color: #000;">
-                    <i class="bi bi-tiktok"></i>
-                </a>
             </div>
         </div>
     </section> 
