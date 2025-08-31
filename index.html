@@ -599,7 +599,7 @@
             background-color: white;
             border-radius: 1rem;
             padding: 1.5rem;
-            width: calc(33.333% - 1.5rem);
+            width: calc(50% - 1.5rem);
             min-width: 250px;
             text-align: center;
             box-shadow: 0 5px 15px var(--shadow);
@@ -611,15 +611,25 @@
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
         }
         
-        .cert-icon {
-            font-size: 3rem;
-            color: var(--primary);
+        .cert-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 0.5rem;
             margin-bottom: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .cert-item:hover .cert-img {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
         }
         
         .cert-title {
             font-weight: 600;
             margin-bottom: 0.5rem;
+            color: var(--primary);
         }
         
         .cert-issuer {
@@ -909,8 +919,8 @@
                 padding: 1.2rem;
             }
             
-            .cert-icon {
-                font-size: 2.5rem;
+            .cert-img {
+                height: 150px;
             }
             
             .cert-title {
@@ -1151,25 +1161,10 @@
         
         <div class="cert-container">
             <div class="cert-item fade-in">
-                <div class="cert-icon">
-                    <i class="bi bi-award-fill"></i>
-                </div>
-                <h5 class="cert-title">Sertifikat Web Development</h5>
-                <p class="cert-issuer">Dicoding Academy</p>
+                <img src="/img/sertifikat/sertifikat1.jpg" class="cert-img">
             </div>
             <div class="cert-item fade-in">
-                <div class="cert-icon">
-                    <i class="bi bi-trophy-fill"></i>
-                </div>
-                <h5 class="cert-title">Juara 2 LKS Web Development</h5>
-                <p class="cert-issuer">SMKN 1 Kawali</p>
-            </div>
-            <div class="cert-item fade-in">
-                <div class="cert-icon">
-                    <i class="bi bi-patch-check-fill"></i>
-                </div>
-                <h5 class="cert-title">Sertifikat Game Development</h5>
-                <p class="cert-issuer">Unity Learn</p>
+                <img src="/img/sertifikat/sertifikat2.jpg" class="cert-img">\
             </div>
         </div>
     </section> 
@@ -1282,7 +1277,3 @@
     </script>
 </body> 
 </html>
-
-
-
-
