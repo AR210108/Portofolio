@@ -1,4 +1,3 @@
-
 <!DOCTYPE html> 
 <html lang="id"> 
 <head> 
@@ -615,11 +614,13 @@
         .cert-img {
             width: 100%;
             height: 200px;
-            object-fit: cover;
+            object-fit: contain;
             border-radius: 0.5rem;
             margin-bottom: 1rem;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
+            background-color: #f8f9fa;
+            padding: 10px;
         }
         
         .cert-item:hover .cert-img {
@@ -1162,10 +1163,14 @@
         
         <div class="cert-container">
             <div class="cert-item fade-in">
-                <img src="/img/sertifikat/sertifikat1.png" class="cert-img">
+                <img src="/img/sertifikat/sertifikat1.png" alt="Sertifikat Web Development" class="cert-img">
+                <h5 class="cert-title">Sertifikat Web Development</h5>
+                <p class="cert-issuer">Dicoding Academy</p>
             </div>
             <div class="cert-item fade-in">
-                <img src="/img/sertifikat/sertifikat2.jpg" class="cert-img">
+                <img src="/img/sertifikat/sertifikat2.jpg" alt="Juara 2 LKS Web Development" class="cert-img">
+                <h5 class="cert-title">Juara 2 LKS Web Development</h5>
+                <p class="cert-issuer">SMKN 1 Kawali</p>
             </div>
         </div>
     </section> 
@@ -1278,11 +1283,3 @@
     </script>
 </body> 
 </html>
-
-
-
-
-
-
-
-
