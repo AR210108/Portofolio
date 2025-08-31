@@ -101,12 +101,40 @@
         
         .navbar-brand::before {
             content: '';
-            display: inline-block;
-            width: 30px;
-            height: 30px;
+            display: none;
             background-color: var(--accent);
             border-radius: 50%;
             margin-right: 10px;
+        }
+        
+        /* Profil foto di navbar */
+        .navbar-profile {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            border: 2px solid white;
+            margin-right: 10px;
+            display: none;
+            object-fit: cover;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform: scale(0);
+            opacity: 0;
+        }
+        
+        header.show-profile .navbar-profile {
+            display: block;
+            transform: scale(1);
+            opacity: 1;
+        }
+        
+        /* Animasi untuk foto profil di hero section saat scroll */
+        .hero-profile {
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .hero-profile.fade-out {
+            transform: scale(0.8);
+            opacity: 0;
         }
         
         nav a { 
@@ -933,6 +961,12 @@
             .cert-item {
                 width: 100%;
             }
+            
+            /* Navbar profile for mobile */
+            .navbar-profile {
+                width: 30px;
+                height: 30px;
+            }
         }
     </style> 
 </head> 
@@ -941,26 +975,26 @@
     <div class="loader-wrapper">
         <div class="loader"></div>
     </div>
-
     <!-- Header --> 
     <header> 
-        <div class="container d-flex flex-column align-items-center"> 
-            <h1 class="navbar-brand">RINDA</h1> 
-            <nav> 
+        <div class="container d-flex justify-content-between align-items-center"> 
+            <div class="d-flex align-items-center">
+                <img src="/img/foto.png" alt="Foto Profil" class="navbar-profile">
+                <h1 class="navbar-brand mb-0">RINDA</h1>
+            </div>
+            <nav class="d-flex"> 
                 <a href="#proyek"><i class="bi bi-window"></i> Proyek</a> 
                 <a href="#kontak"><i class="bi bi-envelope"></i> Kontak</a> 
             </nav> 
         </div> 
-    </header> 
-
+    </header>
     <!-- Hero Section --> 
     <section class="hero"> 
         <div class="hero-content">
-            <img src="/img/foto.png" alt="Foto Profil" class="rounded-circle mb-3 animate__animated animate__zoomIn" width="150"> 
+            <img src="/img/foto.png" alt="Foto Profil" class="rounded-circle mb-3 animate__animated animate__zoomIn hero-profile" width="150"> 
             <p class="hero-description animate__animated animate__fadeInUp animate__delay-1s">Siswa PPLG | Siap Magang di Dunia Industri Digital</p> 
         </div>
     </section> 
-
     <!-- Tentang Saya --> 
     <section class="container"> 
         <div class="text-center mb-5">
@@ -975,7 +1009,6 @@
             <p class="lead"> Saya mengikuti Praktik Kerja Lapangan (PKL) di PT Inovindo Digital Media untuk memperluas wawasan dan pengalaman dalam dunia industri digital, khususnya di bidang pengembangan web dan perangkat lunak. Saya berharap dapat belajar secara langsung dari profesional di bidangnya serta berkontribusi sesuai dengan kemampuan saya. </p> 
         </div>
     </section> 
-
     <!-- Skills --> 
     <section class="container"> 
         <div class="text-center mb-5">
@@ -1034,7 +1067,6 @@
             </div>
         </div>
     </section> 
-
     <!-- Proyek --> 
     <section class="container" id="proyek"> 
         <div class="text-center mb-5">
@@ -1084,7 +1116,6 @@
             </div> 
         </div> 
     </section> 
-
     <!-- Organisasi --> 
     <section class="container"> 
         <div class="text-center mb-5">
@@ -1141,7 +1172,6 @@
             </div>
         </div>
     </section> 
-
     <!-- Kontak --> 
     <section class="container" id="kontak"> 
         <div class="text-center mb-5">
@@ -1169,11 +1199,9 @@
             </div>
         </div>
     </section> 
-
     <!-- Footer --> 
     <footer> 
         <p class="footer-text">&copy; 2025 Rinda. All rights reserved.</p>
-        <p>Dibuat dengan <span class="footer-heart">♥</span> oleh Rinda</p>
         <div class="footer-social">
             <a href="https://github.com/AR210108"><i class="bi bi-github"></i></a>
             <a href="https://vercel.com/ar210108"><i class="bi bi-globe"></i></a>
@@ -1181,7 +1209,6 @@
             <a href="https://tiktok.com/@rinnnn_2101"><i class="bi bi-tiktok"></i></a>
         </div>
     </footer> 
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         // Preloader
@@ -1190,17 +1217,30 @@
                 document.querySelector('.loader-wrapper').classList.add('hidden');
             }, 1000);
         });
-
-        // Header scroll effect
+        
+        // Header scroll effect dan foto profil
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
+            const heroSection = document.querySelector('.hero');
+            const heroProfile = document.querySelector('.hero-profile');
+            const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+            
             if (window.scrollY > 50) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
             }
+            
+            // Tampilkan foto profil di navbar saat hero section tidak terlihat
+            if (window.scrollY > heroBottom - 100) {
+                header.classList.add('show-profile');
+                heroProfile.classList.add('fade-out');
+            } else {
+                header.classList.remove('show-profile');
+                heroProfile.classList.remove('fade-out');
+            }
         });
-
+        
         // Smooth scrolling untuk link navigasi
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
@@ -1214,7 +1254,7 @@
                 }
             });
         });
-
+        
         // Animasi saat scroll
         const fadeElements = document.querySelectorAll('.fade-in');
         
@@ -1232,7 +1272,7 @@
         fadeElements.forEach(element => {
             fadeInObserver.observe(element);
         });
-
+        
         // Animasi untuk skill items dengan delay bertingkat
         const skillItems = document.querySelectorAll('.skill-item');
         skillItems.forEach((item, index) => {
