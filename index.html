@@ -670,6 +670,7 @@
             align-items: center;
             gap: 1rem;
             text-align: left;
+            min-width: 250px; /* Ensure consistent width */
         }
 
         .contact-icon {
@@ -692,15 +693,22 @@
             transform: scale(1.1);
         }
 
+        .contact-text {
+            flex: 1;
+        }
+
         .contact-text h5 {
             font-weight: 600;
             margin-bottom: 0.25rem;
+            white-space: nowrap; /* Prevent text wrapping */
         }
 
         .contact-text a {
             color: var(--ice-blue);
             text-decoration: none;
             transition: color 0.2s ease;
+            display: block;
+            white-space: nowrap; /* Prevent text wrapping */
         }
 
         .contact-text a:hover {
@@ -733,6 +741,13 @@
             color: var(--white);
             text-decoration: none;
             transition: all 0.2s ease;
+            opacity: 0; /* Start hidden for animation */
+            transform: translateY(20px);
+        }
+
+        .social-link.show {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .social-link:hover {
@@ -810,6 +825,12 @@
                 width: 100%;
                 max-width: 300px;
                 justify-content: center;
+                min-width: auto; /* Override for mobile */
+            }
+            
+            .contact-text h5,
+            .contact-text a {
+                white-space: normal; /* Allow wrapping on mobile */
             }
             
             .skills-grid,
@@ -830,6 +851,11 @@
             
             .hero::before {
                 animation: pulse 3s ease-in-out infinite;
+            }
+
+            /* Faster footer animation on mobile */
+            .social-link {
+                transition: all 0.15s ease;
             }
         }
 
@@ -863,6 +889,13 @@
             
             .particle {
                 animation: float-particle 4s infinite linear;
+            }
+
+            /* Immediate footer animation on small mobile */
+            .social-link {
+                opacity: 1;
+                transform: translateY(0);
+                transition: all 0.1s ease;
             }
         }
 
@@ -1508,8 +1541,42 @@
             });
         });
 
-        // Initialize particles
+        // Faster footer animation on mobile
+        function animateFooterLinks() {
+            const socialLinks = document.querySelectorAll('.social-link');
+            const isMobile = window.innerWidth <= 576;
+            
+            if (isMobile) {
+                // On small mobile, show immediately
+                socialLinks.forEach(link => {
+                    link.classList.add('show');
+                });
+            } else {
+                // On larger screens, use staggered animation
+                socialLinks.forEach((link, index) => {
+                    setTimeout(() => {
+                        link.classList.add('show');
+                    }, index * 100); // 100ms stagger
+                });
+            }
+        }
+
+        // Initialize particles and footer animation
         createParticles();
+        
+        // Wait for AOS to be ready, then animate footer
+        setTimeout(() => {
+            animateFooterLinks();
+        }, 300);
+
+        // Re-animate on resize
+        let resizeTimer;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function() {
+                animateFooterLinks();
+            }, 250);
+        });
     </script>
 </body>
 </html>
