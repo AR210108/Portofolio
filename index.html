@@ -167,63 +167,6 @@
             margin-right: 5px;
         }
         
-        /* Dropdown Menu Styles */
-        .dropdown-menu {
-            background-color: var(--primary);
-            border: none;
-            border-radius: 0.5rem;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-            padding: 0.5rem 0;
-            margin-top: 0.5rem;
-            animation: fadeInDown 0.3s ease;
-        }
-        
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .dropdown-item {
-            color: white !important;
-            padding: 0.6rem 1.5rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        
-        .dropdown-item:hover {
-            background-color: var(--secondary);
-            color: white !important;
-            padding-left: 2rem;
-        }
-        
-        .dropdown-item i {
-            margin-right: 8px;
-            width: 16px;
-            text-align: center;
-        }
-        
-        .dropdown-toggle::after {
-            border: none;
-            margin-left: 5px;
-            vertical-align: middle;
-        }
-        
-        .dropdown-toggle .bi-chevron-down {
-            font-size: 0.8rem;
-            transition: transform 0.3s ease;
-        }
-        
-        .dropdown.show .dropdown-toggle .bi-chevron-down {
-            transform: rotate(180deg);
-        }
-        
         /* Mobile Menu Toggle */
         .navbar-toggler {
             border: none;
@@ -481,124 +424,6 @@
             border-radius: 3px;
         }
         
-        /* Resume Section */
-        .resume-container {
-            background-color: white;
-            border-radius: 1rem;
-            padding: 3rem;
-            box-shadow: 0 5px 15px var(--shadow);
-            margin-bottom: 3rem;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .resume-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 5px;
-            height: 100%;
-            background-color: var(--primary);
-        }
-        
-        .resume-section {
-            margin-bottom: 2.5rem;
-        }
-        
-        .resume-section:last-child {
-            margin-bottom: 0;
-        }
-        
-        .resume-section-title {
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-            position: relative;
-            padding-left: 15px;
-            display: flex;
-            align-items: center;
-        }
-        
-        .resume-section-title i {
-            margin-right: 10px;
-            color: var(--secondary);
-        }
-        
-        .resume-section-title::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 5px;
-            height: 70%;
-            background-color: var(--accent);
-            border-radius: 3px;
-        }
-        
-        .resume-item {
-            margin-bottom: 1.5rem;
-            position: relative;
-            padding-left: 20px;
-            border-left: 2px solid var(--accent-light);
-        }
-        
-        .resume-item:last-child {
-            margin-bottom: 0;
-        }
-        
-        .resume-item::before {
-            content: '';
-            position: absolute;
-            left: -6px;
-            top: 5px;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-color: var(--primary);
-        }
-        
-        .resume-item h5 {
-            font-weight: 600;
-            color: var(--primary-dark);
-            margin-bottom: 0.3rem;
-        }
-        
-        .resume-item .resume-date {
-            font-size: 0.9rem;
-            color: var(--secondary);
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-        
-        .resume-item p {
-            margin-bottom: 0;
-        }
-        
-        .resume-skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-            margin-top: 1rem;
-        }
-        
-        .resume-skill {
-            background-color: var(--accent-light);
-            color: var(--primary-dark);
-            padding: 0.4rem 1rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        
-        .resume-skill:hover {
-            background-color: var(--accent);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-        }
-        
         /* Skills */
         .skills-container {
             display: flex;
@@ -611,8 +436,8 @@
             background-color: white;
             border-radius: 1rem;
             padding: 1.5rem;
-            width: calc(20% - 1.5rem);
-            min-width: 180px;
+            width: calc(25% - 1.5rem);
+            min-width: 200px;
             text-align: center;
             box-shadow: 0 5px 15px var(--shadow);
             transition: all 0.3s ease;
@@ -1020,15 +845,9 @@
         }
         
         /* Responsive */
-        @media (max-width: 1200px) {
-            .skill-item {
-                width: calc(25% - 1.5rem);
-            }
-        }
-        
         @media (max-width: 992px) {
             .skill-item {
-                width: calc(33.33% - 1.5rem);
+                width: calc(50% - 1.5rem);
             }
             .cert-item {
                 width: calc(50% - 1.5rem);
@@ -1072,27 +891,6 @@
                 padding: 0.5rem 0;
             }
             
-            /* Mobile Dropdown */
-            .dropdown-menu {
-                background-color: var(--secondary);
-                position: static !important;
-                transform: none !important;
-                border: none;
-                box-shadow: none;
-                padding-left: 1rem;
-                margin-top: 0.5rem;
-            }
-            
-            .dropdown-item {
-                padding: 0.4rem 0.8rem;
-                font-size: 0.9rem;
-            }
-            
-            .dropdown-item:hover {
-                background-color: transparent;
-                padding-left: 1.2rem;
-            }
-            
             /* Hero Section */
             .hero { 
                 padding: 6rem 1rem 4rem; 
@@ -1134,33 +932,6 @@
             
             .about-section p {
                 font-size: 0.9rem;
-            }
-            
-            /* Resume Section */
-            .resume-container {
-                padding: 2rem;
-                margin-bottom: 2rem;
-            }
-            
-            .resume-section-title {
-                font-size: 1.2rem;
-            }
-            
-            .resume-item h5 {
-                font-size: 1.1rem;
-            }
-            
-            .resume-item .resume-date {
-                font-size: 0.85rem;
-            }
-            
-            .resume-item p {
-                font-size: 0.9rem;
-            }
-            
-            .resume-skill {
-                font-size: 0.85rem;
-                padding: 0.3rem 0.8rem;
             }
             
             /* Skills */
@@ -1380,32 +1151,18 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#beranda"><i class="bi bi-house-door"></i> Beranda</a>
                         </li>
-                        
-                        <!-- Dropdown Tentang -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="tentangDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="bi bi-person"></i> Tentang
-                                <i class="bi bi-chevron-down"></i>
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="tentangDropdown">
-                                <li><a class="dropdown-item" href="#tentang"><i class="bi bi-person-circle"></i> Profil</a></li>
-                                <li><a class="dropdown-item" href="#resume"><i class="bi bi-file-earmark-text"></i> Resume</a></li>
-                            </ul>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#tentang"><i class="bi bi-person"></i> Tentang</a>
                         </li>
-                        
-                        <!-- Dropdown Portfolio -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="portfolioDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="bi bi-briefcase"></i> Portfolio
-                                <i class="bi bi-chevron-down"></i>
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="portfolioDropdown">
-                                <li><a class="dropdown-item" href="#keahlian"><i class="bi bi-tools"></i> Keahlian</a></li>
-                                <li><a class="dropdown-item" href="#proyek"><i class="bi bi-window"></i> Proyek</a></li>
-                                <li><a class="dropdown-item" href="#organisasi"><i class="bi bi-people"></i> Organisasi</a></li>
-                            </ul>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#keahlian"><i class="bi bi-tools"></i> Keahlian</a>
                         </li>
-                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="#proyek"><i class="bi bi-window"></i> Proyek</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#organisasi"><i class="bi bi-people"></i> Organisasi</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#kontak"><i class="bi bi-envelope"></i> Kontak</a>
                         </li>
@@ -1435,65 +1192,6 @@
             <p class="lead"> Saya mengikuti Praktik Kerja Lapangan (PKL) di PT Inovindo Digital Media untuk memperluas wawasan dan pengalaman dalam dunia industri digital, khususnya di bidang pengembangan web dan perangkat lunak. Saya berharap dapat belajar secara langsung dari profesional di bidangnya serta berkontribusi sesuai dengan kemampuan saya. </p> 
         </div>
     </section> 
-    
-    <!-- Resume Section -->
-    <section class="container" id="resume"> 
-        <div class="text-center mb-5">
-            <h2 class="section-title fade-in">Resume</h2>
-            <p class="section-subtitle fade-in">Ringkasan pendidikan, pengalaman, dan soft skills saya</p>
-        </div>
-        
-        <div class="resume-container fade-in">
-            <!-- Pendidikan -->
-            <div class="resume-section">
-                <h3 class="resume-section-title"><i class="bi bi-mortarboard"></i> Pendidikan</h3>
-                
-                <div class="resume-item">
-                    <h5>SMKN 1 Kawali</h5>
-                    <div class="resume-date">2021 - Sekarang</div>
-                    <p>Jurusan Pengembangan Perangkat Lunak dan Gim (PPLG)</p>
-                </div>
-                
-                <div class="resume-item">
-                    <h5>SMP Negeri 1 Kawali</h5>
-                    <div class="resume-date">2018 - 2021</div>
-                    <p>Fokus pada matematika dan sains</p>
-                </div>
-            </div>
-            
-            <!-- Pengalaman -->
-            <div class="resume-section">
-                <h3 class="resume-section-title"><i class="bi bi-briefcase"></i> Pengalaman</h3>
-                
-                <div class="resume-item">
-                    <h5>Praktik Kerja Lapangan (PKL)</h5>
-                    <div class="resume-date">Juli - September 2024</div>
-                    <p>PT Inovindo Digital Media - Magang sebagai pengembang web junior, membantu dalam pembuatan dan pemeliharaan website klien.</p>
-                </div>
-                
-                <div class="resume-item">
-                    <h5>Proyek Pengembangan Game</h5>
-                    <div class="resume-date">2023</div>
-                    <p>Mengembangkan game edukasi "Quiz Sejarah Indonesia" menggunakan Unity sebagai proyek tugas akhir semester.</p>
-                </div>
-            </div>
-            
-            <!-- Soft Skills -->
-            <div class="resume-section">
-                <h3 class="resume-section-title"><i class="bi bi-people"></i> Soft Skills</h3>
-                
-                <div class="resume-skills">
-                    <div class="resume-skill">Kerja Tim</div>
-                    <div class="resume-skill">Problem Solving</div>
-                    <div class="resume-skill">Kreativitas</div>
-                    <div class="resume-skill">Manajemen Waktu</div>
-                    <div class="resume-skill">Komunikasi</div>
-                    <div class="resume-skill">Adaptabilitas</div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
     <!-- Skills --> 
     <section class="container" id="keahlian"> 
         <div class="text-center mb-5">
@@ -1549,30 +1247,6 @@
                     <i class="bi bi-filetype-ppt"></i>
                 </div>
                 <div class="skill-name">PowerPoint</div>
-            </div>
-            <div class="skill-item fade-in">
-                <div class="skill-icon">
-                    <i class="bi bi-bootstrap"></i>
-                </div>
-                <div class="skill-name">Bootstrap</div>
-            </div>
-            <div class="skill-item fade-in">
-                <div class="skill-icon">
-                    <i class="bi bi-filetype-php"></i>
-                </div>
-                <div class="skill-name">PHP</div>
-            </div>
-            <div class="skill-item fade-in">
-                <div class="skill-icon">
-                    <i class="bi bi-database"></i>
-                </div>
-                <div class="skill-name">MySQL</div>
-            </div>
-            <div class="skill-item fade-in">
-                <div class="skill-icon">
-                    <i class="bi bi-git"></i>
-                </div>
-                <div class="skill-name">Git</div>
             </div>
         </div>
     </section> 
@@ -1664,7 +1338,7 @@
                     <img src="/img/Exit.png" alt="EXIT" class="org-img"> 
                     <h5 class="org-title">Ekstrakurikuler Informasi dan Teknologi (EXIT)</h5> 
                     <h6 class="org-position">Ketua Divisi ICT</h6> 
-                    <p>Bertugas membenahkan komputer apabila ada yang bermasalah, atau jaringan tidak ada.</p> 
+                    <p>Bertugas membenarkan komputer apabila ada yang bermasalah, atau jaringan tidak ada.</p> 
                 </div> 
             </div> 
             <div class="col-md-6 fade-in"> 
@@ -1782,12 +1456,6 @@
                         const navbarToggler = document.querySelector('.navbar-toggler');
                         navbarToggler.click();
                     }
-                    
-                    // Tutup dropdown setelah klik
-                    const dropdowns = document.querySelectorAll('.dropdown-menu.show');
-                    dropdowns.forEach(dropdown => {
-                        dropdown.classList.remove('show');
-                    });
                 }
             });
         });
