@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rinda Portoflio</title>
+    <title>Rinda - Full Stack Developer Portfolio</title>
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -165,6 +165,7 @@
             display: flex;
             align-items: center;
             overflow: hidden;
+            padding-top: 80px;
         }
 
         .hero::before {
@@ -233,8 +234,8 @@
         }
 
         .hero-avatar {
-            width: 180px;
-            height: 180px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
             object-fit: cover;
             border: 5px solid rgba(255, 255, 255, 0.2);
@@ -307,111 +308,6 @@
         .hero-subtitle .highlight {
             color: var(--accent-blue);
             font-weight: 600;
-        }
-
-        .hero-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-bottom: 3rem;
-            justify-content: center;
-            animation: slideInUp 1s ease 0.6s both;
-        }
-
-        .btn-hero {
-            padding: 14px 32px;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            transition: all 0.3s ease;
-            border: none;
-            font-size: 1rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-primary-hero {
-            background: var(--accent-blue);
-            color: var(--white);
-            box-shadow: 0 10px 25px rgba(62, 146, 204, 0.3);
-        }
-
-        .btn-primary-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .btn-primary-hero:hover::before {
-            left: 100%;
-        }
-
-        .btn-primary-hero:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(62, 146, 204, 0.4);
-            background: var(--secondary-blue);
-        }
-
-        .btn-secondary-hero {
-            background: transparent;
-            color: var(--white);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(10px);
-        }
-
-        .btn-secondary-hero:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: var(--white);
-            transform: translateY(-3px);
-        }
-
-        .hero-visitor-counter {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 15px;
-            padding: 1.5rem 2rem;
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            animation: slideInUp 1s ease 0.8s both;
-        }
-
-        .visitor-icon {
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: var(--accent-blue);
-        }
-
-        .visitor-info {
-            text-align: left;
-        }
-
-        .visitor-label {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 0.9rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .visitor-count {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--white);
-            font-family: 'JetBrains Mono', monospace;
         }
 
         /* Section Styles */
@@ -764,6 +660,7 @@
         .contact-info {
             display: flex;
             justify-content: center;
+            align-items: flex-start;
             gap: clamp(2rem, 4vw, 3rem);
             flex-wrap: wrap;
         }
@@ -772,6 +669,7 @@
             display: flex;
             align-items: center;
             gap: 1rem;
+            text-align: left;
         }
 
         .contact-icon {
@@ -785,6 +683,7 @@
             font-size: clamp(1.2rem, 2vw, 1.5rem);
             color: var(--white);
             transition: all 0.3s ease;
+            flex-shrink: 0;
         }
 
         .contact-item:hover .contact-icon {
@@ -893,11 +792,6 @@
                 font-size: 1.1rem;
             }
             
-            .btn-hero {
-                padding: 12px 24px;
-                font-size: 0.9rem;
-            }
-            
             .section {
                 padding: 60px 0;
             }
@@ -909,6 +803,13 @@
             .contact-info {
                 flex-direction: column;
                 gap: 2rem;
+                align-items: center;
+            }
+            
+            .contact-item {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
             }
             
             .skills-grid,
@@ -922,6 +823,7 @@
         @media (max-width: 576px) {
             .hero {
                 padding: 2rem 0;
+                padding-top: 60px;
             }
             
             .project-img-container {
@@ -940,10 +842,6 @@
             .social-links {
                 gap: 1rem;
             }
-            
-            .visitor-count {
-                font-size: 1.5rem;
-            }
         }
 
         @media (max-width: 380px) {
@@ -955,11 +853,6 @@
                 font-size: 1rem;
             }
             
-            .btn-hero {
-                padding: 10px 20px;
-                font-size: 0.85rem;
-            }
-            
             .section-title {
                 font-size: 1.8rem;
             }
@@ -969,10 +862,16 @@
             }
         }
 
-        /* Mobile Menu Styles */
+        /* Mobile Menu Styles - Fixed Hamburger/X Toggle */
         .navbar-toggler {
             border: none;
             padding: 0.25rem 0.5rem;
+            position: relative;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .navbar-toggler:focus {
@@ -984,39 +883,60 @@
             position: relative;
             width: 25px;
             height: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .navbar-toggler-icon span {
-            position: absolute;
+            display: block;
             width: 100%;
             height: 3px;
             background-color: var(--primary-blue);
             border-radius: 3px;
             transition: all 0.3s ease;
+            transform-origin: center;
         }
 
+        /* Initial state - always hamburger on page load */
         .navbar-toggler-icon span:nth-child(1) {
-            top: 0;
+            transform: rotate(0deg) translate(0, 0);
         }
 
         .navbar-toggler-icon span:nth-child(2) {
-            top: 50%;
-            transform: translateY(-50%);
+            opacity: 1;
+            transform: scaleX(1);
         }
 
         .navbar-toggler-icon span:nth-child(3) {
-            bottom: 0;
+            transform: rotate(0deg) translate(0, 0);
         }
 
-        .navbar-toggler:not(.collapsed) .navbar-toggler-icon span:nth-child(1) {
+        /* When menu is open (showing) - X icon */
+        .navbar-collapse.show ~ .navbar-toggler .navbar-toggler-icon span:nth-child(1) {
             transform: rotate(45deg) translate(6px, 6px);
         }
 
-        .navbar-toggler:not(.collapsed) .navbar-toggler-icon span:nth-child(2) {
+        .navbar-collapse.show ~ .navbar-toggler .navbar-toggler-icon span:nth-child(2) {
             opacity: 0;
+            transform: scaleX(0);
         }
 
-        .navbar-toggler:not(.collapsed) .navbar-toggler-icon span:nth-child(3) {
+        .navbar-collapse.show ~ .navbar-toggler .navbar-toggler-icon span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Alternative: Using Bootstrap's collapsed class */
+        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+
+        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon span:nth-child(3) {
             transform: rotate(-45deg) translate(7px, -7px);
         }
     </style>
@@ -1034,7 +954,7 @@
                 <img src="/img/foto.png" alt="Rinda">
                 Rinda
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon">
                     <span></span>
                     <span></span>
@@ -1092,27 +1012,6 @@
                     <p class="hero-subtitle">
                         Seorang <span class="highlight">Full Stack Developer</span> yang bersemangat dalam menciptakan solusi digital inovatif dan pengalaman pengguna yang menarik.
                     </p>
-                    
-                    <div class="hero-buttons">
-                        <a href="#contact" class="btn-hero btn-primary-hero">
-                            <i class="bi bi-chat-dots"></i>
-                            Hubungi Saya
-                        </a>
-                        <a href="#projects" class="btn-hero btn-secondary-hero">
-                            <i class="bi bi-folder"></i>
-                            Lihat Proyek
-                        </a>
-                    </div>
-                    
-                    <div class="hero-visitor-counter">
-                        <div class="visitor-icon">
-                            <i class="bi bi-eye"></i>
-                        </div>
-                        <div class="visitor-info">
-                            <div class="visitor-label">Pengunjung Website</div>
-                            <div class="visitor-count" id="visitor-count">0</div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -1338,31 +1237,17 @@
                 <div class="timeline-item" data-aos="fade-right">
                     <div class="timeline-content">
                         <div class="timeline-dot"></div>
-                        <div class="timeline-date">2023 - Sekarang</div>
+                        <div class="timeline-date">2021 - Sekarang</div>
                         <h3 class="timeline-title">SMKN 1 Kawali</h3>
                         <p class="timeline-company">Jurusan Pengembangan Perangkat Lunak dan Gim (PPLG)</p>
                         <p>Mempelajari pengembangan web, game, dan aplikasi dengan teknologi terkini.</p>
-                    </div>
-                </div>
-                <div class="timeline-item" data-aos="fade-left">
-                    <div class="timeline-content">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">2020 - 2023</div>
-                        <h3 class="timeline-title">SMPN 1 Kawali</h3>
-                    </div>
-                </div>
-                <div class="timeline-item" data-aos="fade-right">
-                    <div class="timeline-content">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-date">2014 - 2020</div>
-                        <h3 class="timeline-title">SDN 1 Talagasari</h3>
                     </div>
                 </div>
                 
                 <div class="timeline-item" data-aos="fade-left">
                     <div class="timeline-content">
                         <div class="timeline-dot"></div>
-                        <div class="timeline-date">Oktober 2025 - Februari 2026</div>
+                        <div class="timeline-date">Juli - September 2024</div>
                         <h3 class="timeline-title">Praktik Kerja Lapangan</h3>
                         <p class="timeline-company">PT Inovindo Digital Media</p>
                         <p>Magang sebagai pengembang web junior, membantu dalam pembuatan dan pemeliharaan website klien.</p>
@@ -1585,46 +1470,23 @@
             }
         }
 
-        // Visitor counter
-        function updateVisitorCounter() {
-            const visitorCountElement = document.getElementById('visitor-count');
+        // Fix mobile menu icon
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            const navbarCollapse = document.querySelector('.navbar-collapse');
             
-            // Get current count from localStorage or set to 0
-            let count = parseInt(localStorage.getItem('visitorCount') || '0');
+            // Listen to Bootstrap collapse events
+            navbarCollapse.addEventListener('show.bs.collapse', function () {
+                navbarToggler.setAttribute('aria-expanded', 'true');
+            });
             
-            // Check if this is a new session (not just a page refresh)
-            const sessionKey = 'visitorSession';
-            const currentSession = sessionStorage.getItem(sessionKey);
-            
-            if (!currentSession) {
-                // New session, increment count
-                count++;
-                localStorage.setItem('visitorCount', count.toString());
-                sessionStorage.setItem(sessionKey, 'true');
-            }
-            
-            // Animate the counter
-            animateCounter(visitorCountElement, count, 2000);
-        }
+            navbarCollapse.addEventListener('hide.bs.collapse', function () {
+                navbarToggler.setAttribute('aria-expanded', 'false');
+            });
+        });
 
-        function animateCounter(element, target, duration = 2000) {
-            let start = 0;
-            const increment = target / (duration / 16);
-            
-            const timer = setInterval(() => {
-                start += increment;
-                if (start >= target) {
-                    element.textContent = target;
-                    clearInterval(timer);
-                } else {
-                    element.textContent = Math.floor(start);
-                }
-            }, 16);
-        }
-
-        // Initialize particles and visitor counter
+        // Initialize particles
         createParticles();
-        updateVisitorCounter();
     </script>
 </body>
 </html>
