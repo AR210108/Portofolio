@@ -5,21 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio - Rinda</title>
     
-    <!-- PRELOAD: Memuat CSS kritis terlebih dahulu -->
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"></noscript>
-    
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"></noscript>
-    
-    <!-- Font yang dioptimalkan dengan display=swap -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"> 
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <link rel="icon" href="img/Logo.ARS.jpg">
     
-    <!-- CSS inline kritis untuk render cepat -->
     <style>
         :root {
             --primary-dark: #0a192f;
@@ -31,7 +25,6 @@
             --text-secondary: #8892b0;
             --highlight: #64ffda;
             --shadow: rgba(2, 12, 27, 0.7);
-            --shadow-lg: rgba(2, 12, 27, 0.9);
         }
         
         * {
@@ -53,19 +46,19 @@
             font-weight: 600;
         }
         
-        /* Loader */
+        /* LOADER */
         .loader-wrapper {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
+            height: 100vh;
             background-color: var(--primary-dark);
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 9999;
-            transition: opacity 0.5s ease, visibility 0.5s ease;
+            transition: opacity 0.5s ease;
         }
         
         .loader {
@@ -83,139 +76,105 @@
         
         .loader-wrapper.hidden {
             opacity: 0;
-            visibility: hidden;
+            pointer-events: none;
         }
         
-        /* Navigation - Fully Responsive */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 1rem 0;
-            background-color: rgba(10, 25, 47, 0.85);
+        /* NAVIGATION - RESPONSIVE */
+        .navbar-custom {
+            background-color: rgba(10, 25, 47, 0.95) !important;
             backdrop-filter: blur(10px);
-            z-index: 1000;
             transition: all 0.3s ease;
+            padding: 1rem 0;
         }
         
-        nav.scrolled {
+        .navbar-custom.scrolled {
             padding: 0.5rem 0;
             box-shadow: 0 10px 30px -10px var(--shadow);
         }
         
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-        
-        .logo {
-            font-size: clamp(1.2rem, 4vw, 1.5rem);
+        .navbar-brand {
+            font-size: 1.5rem;
             font-weight: 700;
-            color: var(--text-primary);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
+            color: var(--text-primary) !important;
+            font-family: 'Outfit', sans-serif;
         }
         
-        .logo span {
+        .navbar-brand span {
             color: var(--highlight);
         }
         
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 1.5rem;
-        }
-        
-        .nav-item {
-            position: relative;
-        }
-        
-        .nav-link {
-            color: var(--text-secondary);
-            text-decoration: none;
+        .navbar-nav .nav-link {
+            color: var(--text-secondary) !important;
             font-weight: 500;
+            margin: 0 0.5rem;
             position: relative;
             transition: all 0.3s ease;
-            padding: 0.5rem 0;
-            font-size: clamp(0.9rem, 2vw, 1rem);
         }
         
-        .nav-link:hover {
-            color: var(--text-primary);
+        .navbar-nav .nav-link:hover {
+            color: var(--text-primary) !important;
         }
         
-        .nav-link::after {
+        .navbar-nav .nav-link::after {
             content: '';
             position: absolute;
             width: 0;
             height: 2px;
             bottom: 0;
-            left: 0;
+            left: 50%;
             background-color: var(--highlight);
-            transition: width 0.3s ease;
+            transition: all 0.3s ease;
         }
         
-        .nav-link:hover::after {
+        .navbar-nav .nav-link:hover::after {
             width: 100%;
+            left: 0;
         }
         
-        .nav-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            padding: 0.5rem;
-            background: transparent;
+        .navbar-toggler {
             border: none;
-            z-index: 1001;
+            padding: 0.25rem 0.5rem;
         }
         
-        .nav-toggle span {
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+        
+        .navbar-toggler-icon {
+            background-image: none;
+            width: 30px;
+            height: 30px;
+            position: relative;
+        }
+        
+        .navbar-toggler-icon span {
+            display: block;
             width: 25px;
             height: 3px;
             background-color: var(--text-primary);
-            margin: 3px 0;
-            transition: 0.3s;
+            margin: 5px 0;
+            transition: all 0.3s ease;
             border-radius: 3px;
         }
         
-        .nav-toggle.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-        
-        .nav-toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
-        
-        .nav-toggle.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -6px);
-        }
-        
-        /* Hero Section - Fully Responsive */
+        /* HERO SECTION - RESPONSIVE */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 3vw, 2rem);
+            padding: 6rem 0 3rem;
+            background: linear-gradient(135deg, var(--primary-dark), var(--secondary-dark));
             position: relative;
             overflow: hidden;
         }
         
-        .hero-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: clamp(2rem, 5vw, 4rem);
-            align-items: center;
+        .hero-content {
+            text-align: center;
+            padding: 2rem 1rem;
         }
         
         .hero-content h1 {
-            font-size: clamp(2rem, 6vw, 3.5rem);
+            font-size: clamp(2rem, 8vw, 3.5rem);
             font-weight: 700;
             margin-bottom: 1rem;
             line-height: 1.2;
@@ -226,27 +185,29 @@
         }
         
         .hero-content h2 {
-            font-size: clamp(1.2rem, 4vw, 2rem);
+            font-size: clamp(1.2rem, 5vw, 2rem);
             font-weight: 600;
             color: var(--accent-ice);
             margin-bottom: 1.5rem;
         }
         
         .hero-content p {
-            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            font-size: clamp(1rem, 3vw, 1.2rem);
             color: var(--text-secondary);
             margin-bottom: 2rem;
-            max-width: 500px;
-            line-height: 1.7;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .hero-buttons {
             display: flex;
             gap: 1rem;
+            justify-content: center;
             flex-wrap: wrap;
         }
         
-        .btn {
+        .btn-custom {
             padding: 0.8rem 1.5rem;
             border-radius: 4px;
             font-weight: 600;
@@ -255,51 +216,43 @@
             align-items: center;
             transition: all 0.3s ease;
             border: 1px solid transparent;
-            font-size: clamp(0.9rem, 2vw, 1rem);
-            justify-content: center;
-            min-width: 140px;
+            font-size: 1rem;
         }
         
-        .btn-primary {
+        .btn-primary-custom {
             background-color: transparent;
             color: var(--highlight);
             border: 1px solid var(--highlight);
         }
         
-        .btn-primary:hover {
+        .btn-primary-custom:hover {
             background-color: rgba(100, 255, 218, 0.1);
             transform: translateY(-3px);
+            color: var(--highlight);
         }
         
-        .btn-secondary {
+        .btn-secondary-custom {
             background-color: var(--accent-navy);
             color: var(--text-primary);
             border: 1px solid var(--accent-navy);
         }
         
-        .btn-secondary:hover {
+        .btn-secondary-custom:hover {
             background-color: var(--accent-ice);
             color: var(--primary-dark);
             transform: translateY(-3px);
         }
         
-        .btn i {
-            margin-left: 0.5rem;
-        }
-        
         .hero-image {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            text-align: center;
+            padding: 2rem 1rem;
         }
         
         .hero-image-wrapper {
             position: relative;
-            width: min(100%, 400px);
-            height: min(100%, 400px);
-            max-width: 90vw;
-            max-height: 90vw;
+            display: inline-block;
+            width: min(300px, 80vw);
+            height: min(300px, 80vw);
         }
         
         .hero-image-bg {
@@ -311,8 +264,8 @@
             background: linear-gradient(135deg, var(--accent-navy), var(--accent-ice));
             border-radius: 50%;
             opacity: 0.2;
-            filter: blur(40px);
-            z-index: -1;
+            filter: blur(30px);
+            z-index: 0;
         }
         
         .hero-image img {
@@ -320,24 +273,21 @@
             height: 100%;
             object-fit: cover;
             border-radius: 50%;
-            border: 2px solid var(--accent-ice);
+            border: 3px solid var(--accent-ice);
             position: relative;
             z-index: 1;
         }
         
         .social-links {
-            position: absolute;
-            left: clamp(-60px, -10vw, -50px);
-            top: 50%;
-            transform: translateY(-50%);
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             gap: 1rem;
+            margin-top: 2rem;
         }
         
         .social-link {
-            width: 40px;
-            height: 40px;
+            width: 45px;
+            height: 45px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -346,6 +296,7 @@
             color: var(--text-secondary);
             text-decoration: none;
             transition: all 0.3s ease;
+            font-size: 1.2rem;
         }
         
         .social-link:hover {
@@ -354,27 +305,17 @@
             transform: translateY(-3px);
         }
         
-        /* Section Styling - Fully Responsive */
+        /* SECTION STYLING */
         section {
-            padding: clamp(3rem, 8vw, 5rem) 0;
+            padding: 4rem 0;
             position: relative;
         }
         
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 clamp(1rem, 3vw, 2rem);
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: clamp(2rem, 5vw, 4rem);
-        }
-        
         .section-title {
-            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            font-size: clamp(1.8rem, 6vw, 2.5rem);
             font-weight: 700;
             margin-bottom: 1rem;
+            text-align: center;
             position: relative;
             display: inline-block;
         }
@@ -391,83 +332,44 @@
         }
         
         .section-subtitle {
-            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            font-size: clamp(1rem, 3vw, 1.2rem);
             color: var(--text-secondary);
+            text-align: center;
             max-width: 700px;
-            margin: 0 auto;
-            line-height: 1.7;
+            margin: 0 auto 3rem;
         }
         
-        /* About Section - Fully Responsive */
+        /* ABOUT SECTION */
         .about {
             background-color: var(--secondary-dark);
         }
         
-        .about-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: clamp(2rem, 5vw, 4rem);
-            align-items: center;
-        }
-        
-        .about-image {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .about-image-wrapper {
-            position: relative;
-            width: min(100%, 400px);
-            height: min(100%, 400px);
-            max-width: 90vw;
-            max-height: 90vw;
-        }
-        
-        .about-image-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--accent-navy), var(--accent-ice));
-            border-radius: 10px;
-            opacity: 0.2;
-            filter: blur(40px);
-            z-index: -1;
-        }
-        
-        .about-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 10px;
-            border: 2px solid var(--accent-ice);
-            position: relative;
-            z-index: 1;
-        }
-        
-        .about-content h3 {
-            font-size: clamp(1.4rem, 4vw, 1.8rem);
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: var(--accent-ice);
-        }
-        
-        .about-content p {
-            font-size: clamp(1rem, 2.5vw, 1.1rem);
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
-        }
-        
-        .about-content ul {
-            list-style: none;
+        .about-card {
+            background-color: var(--primary-dark);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px -10px var(--shadow);
             margin-bottom: 2rem;
         }
         
-        .about-content li {
+        .about-card h3 {
+            font-size: clamp(1.3rem, 4vw, 1.8rem);
+            color: var(--accent-ice);
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-card p {
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-card ul {
+            list-style: none;
+        }
+        
+        .about-card li {
             font-size: clamp(1rem, 2.5vw, 1.1rem);
             color: var(--text-secondary);
             margin-bottom: 0.8rem;
@@ -475,48 +377,124 @@
             align-items: flex-start;
         }
         
-        .about-content li i {
+        .about-card li i {
             color: var(--highlight);
             margin-right: 1rem;
             margin-top: 0.2rem;
             flex-shrink: 0;
         }
         
-        /* Skills Section - Fully Responsive */
-        .skills-container {
+        /* RESUME SECTION */
+        .resume {
+            background-color: var(--primary-dark);
+        }
+        
+        .resume-card {
+            background-color: var(--secondary-dark);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px -10px var(--shadow);
+        }
+        
+        .resume-card h3 {
+            font-size: clamp(1.3rem, 4vw, 1.8rem);
+            color: var(--accent-ice);
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .resume-card h3 i {
+            color: var(--highlight);
+        }
+        
+        .resume-item {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(136, 146, 176, 0.2);
+        }
+        
+        .resume-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .resume-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .resume-title {
+            font-size: clamp(1.1rem, 3vw, 1.3rem);
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        
+        .resume-date {
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            color: var(--highlight);
+            font-weight: 500;
+        }
+        
+        .resume-subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
+            color: var(--accent-ice);
+            margin-bottom: 0.5rem;
+        }
+        
+        .resume-description {
+            font-size: clamp(0.95rem, 2.5vw, 1rem);
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .skill-tag {
+            background-color: var(--accent-navy);
+            color: var(--text-primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: clamp(0.8rem, 2vw, 0.9rem);
+            font-weight: 500;
+        }
+        
+        /* SKILLS SECTION */
+        .skills {
+            background-color: var(--secondary-dark);
+        }
+        
+        .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: clamp(1rem, 3vw, 2rem);
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
         }
         
         .skill-card {
-            background-color: var(--secondary-dark);
-            border-radius: 10px;
-            padding: clamp(1.5rem, 4vw, 2rem);
+            background-color: var(--primary-dark);
+            border-radius: 15px;
+            padding: 2rem 1rem;
             text-align: center;
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
+            box-shadow: 0 10px 30px -10px var(--shadow);
             height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .skill-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent-navy), var(--accent-ice));
         }
         
         .skill-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 10px 30px -10px var(--shadow);
+            box-shadow: 0 15px 35px -10px var(--shadow);
         }
         
         .skill-icon {
@@ -526,45 +504,43 @@
         }
         
         .skill-name {
-            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            font-size: clamp(1rem, 3vw, 1.2rem);
             font-weight: 600;
             margin-bottom: 0.5rem;
         }
         
         .skill-level {
-            font-size: clamp(0.9rem, 2vw, 1rem);
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
             color: var(--text-secondary);
         }
         
-        /* Projects Section - Fully Responsive */
+        /* PROJECTS SECTION */
         .projects {
-            background-color: var(--secondary-dark);
+            background-color: var(--primary-dark);
         }
         
-        .projects-container {
+        .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: clamp(1.5rem, 4vw, 2rem);
+            gap: 2rem;
         }
         
         .project-card {
-            background-color: var(--primary-dark);
-            border-radius: 10px;
+            background-color: var(--secondary-dark);
+            border-radius: 15px;
             overflow: hidden;
             transition: all 0.3s ease;
-            position: relative;
+            box-shadow: 0 10px 30px -10px var(--shadow);
             height: 100%;
-            display: flex;
-            flex-direction: column;
         }
         
         .project-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 10px 30px -10px var(--shadow);
+            box-shadow: 0 15px 35px -10px var(--shadow);
         }
         
         .project-image {
-            height: clamp(150px, 30vw, 200px);
+            height: 200px;
             overflow: hidden;
             position: relative;
         }
@@ -588,15 +564,12 @@
             color: var(--text-primary);
             padding: 5px 10px;
             border-radius: 20px;
-            font-size: clamp(0.7rem, 2vw, 0.8rem);
+            font-size: 0.8rem;
             font-weight: 600;
         }
         
         .project-content {
-            padding: clamp(1rem, 3vw, 1.5rem);
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
+            padding: 1.5rem;
         }
         
         .project-title {
@@ -607,11 +580,10 @@
         }
         
         .project-description {
-            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            font-size: clamp(0.95rem, 2.5vw, 1rem);
             color: var(--text-secondary);
             margin-bottom: 1.5rem;
             line-height: 1.6;
-            flex-grow: 1;
         }
         
         .project-link {
@@ -621,7 +593,7 @@
             display: inline-flex;
             align-items: center;
             transition: all 0.3s ease;
-            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            font-size: clamp(0.95rem, 2.5vw, 1rem);
         }
         
         .project-link:hover {
@@ -632,31 +604,36 @@
             margin-left: 0.5rem;
         }
         
-        /* Organization Section - Fully Responsive */
-        .org-container {
+        /* ORGANIZATION SECTION */
+        .organization {
+            background-color: var(--secondary-dark);
+        }
+        
+        .org-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: clamp(1.5rem, 4vw, 2rem);
+            gap: 2rem;
         }
         
         .org-card {
-            background-color: var(--secondary-dark);
-            border-radius: 10px;
-            padding: clamp(1.5rem, 4vw, 2rem);
+            background-color: var(--primary-dark);
+            border-radius: 15px;
+            padding: 2rem;
             display: flex;
             align-items: center;
+            gap: 1.5rem;
             transition: all 0.3s ease;
-            gap: clamp(1rem, 3vw, 1.5rem);
+            box-shadow: 0 10px 30px -10px var(--shadow);
         }
         
         .org-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 10px 30px -10px var(--shadow);
+            box-shadow: 0 15px 35px -10px var(--shadow);
         }
         
         .org-image {
-            width: clamp(80px, 15vw, 100px);
-            height: clamp(80px, 15vw, 100px);
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid var(--accent-ice);
@@ -683,31 +660,32 @@
             line-height: 1.5;
         }
         
-        /* Certificates Section - Fully Responsive */
+        /* CERTIFICATES SECTION */
         .certificates {
-            background-color: var(--secondary-dark);
+            background-color: var(--primary-dark);
         }
         
-        .cert-container {
+        .cert-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: clamp(1.5rem, 4vw, 2rem);
+            gap: 2rem;
         }
         
         .cert-card {
-            background-color: var(--primary-dark);
-            border-radius: 10px;
+            background-color: var(--secondary-dark);
+            border-radius: 15px;
             overflow: hidden;
             transition: all 0.3s ease;
+            box-shadow: 0 10px 30px -10px var(--shadow);
         }
         
         .cert-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 10px 30px -10px var(--shadow);
+            box-shadow: 0 15px 35px -10px var(--shadow);
         }
         
         .cert-image {
-            height: clamp(200px, 40vw, 250px);
+            height: 250px;
             overflow: hidden;
         }
         
@@ -722,38 +700,40 @@
             transform: scale(1.05);
         }
         
-        /* Contact Section - Fully Responsive */
-        .contact-container {
-            max-width: 800px;
-            margin: 0 auto;
+        /* CONTACT SECTION */
+        .contact {
             background-color: var(--secondary-dark);
-            border-radius: 10px;
-            padding: clamp(2rem, 5vw, 3rem);
-            box-shadow: 0 10px 30px -10px var(--shadow);
         }
         
-        .contact-content {
-            text-align: center;
+        .contact-card {
+            background-color: var(--primary-dark);
+            border-radius: 15px;
+            padding: 3rem 2rem;
+            box-shadow: 0 10px 30px -10px var(--shadow);
+            max-width: 800px;
+            margin: 0 auto;
         }
         
         .contact-content h3 {
-            font-size: clamp(1.4rem, 4vw, 1.8rem);
+            font-size: clamp(1.5rem, 4vw, 2rem);
             font-weight: 700;
             margin-bottom: 1.5rem;
             color: var(--accent-ice);
+            text-align: center;
         }
         
         .contact-content p {
             font-size: clamp(1rem, 2.5vw, 1.1rem);
             color: var(--text-secondary);
             margin-bottom: 2rem;
+            text-align: center;
             line-height: 1.6;
         }
         
         .contact-info {
             display: flex;
             justify-content: center;
-            gap: clamp(1rem, 3vw, 2rem);
+            gap: 2rem;
             margin-bottom: 2rem;
             flex-wrap: wrap;
         }
@@ -762,13 +742,14 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            text-align: center;
             flex: 1;
             min-width: 200px;
         }
         
         .contact-icon {
-            width: clamp(50px, 10vw, 60px);
-            height: clamp(50px, 10vw, 60px);
+            width: 60px;
+            height: 60px;
             background-color: var(--accent-navy);
             border-radius: 50%;
             display: flex;
@@ -776,15 +757,11 @@
             justify-content: center;
             margin-bottom: 1rem;
             color: var(--text-primary);
-            font-size: clamp(1.2rem, 3vw, 1.5rem);
-        }
-        
-        .contact-text {
-            text-align: center;
+            font-size: 1.5rem;
         }
         
         .contact-text h4 {
-            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
             font-weight: 600;
             margin-bottom: 0.5rem;
             color: var(--text-primary);
@@ -794,7 +771,7 @@
             color: var(--highlight);
             text-decoration: none;
             transition: all 0.3s ease;
-            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            font-size: clamp(0.95rem, 2.5vw, 1rem);
             word-break: break-word;
         }
         
@@ -810,8 +787,8 @@
         }
         
         .contact-social a {
-            width: clamp(45px, 8vw, 50px);
-            height: clamp(45px, 8vw, 50px);
+            width: 50px;
+            height: 50px;
             background-color: var(--accent-navy);
             border-radius: 50%;
             display: flex;
@@ -820,7 +797,7 @@
             color: var(--text-primary);
             text-decoration: none;
             transition: all 0.3s ease;
-            font-size: clamp(1.2rem, 3vw, 1.3rem);
+            font-size: 1.3rem;
         }
         
         .contact-social a:hover {
@@ -829,18 +806,12 @@
             transform: translateY(-3px);
         }
         
-        /* Footer - Fully Responsive */
+        /* FOOTER */
         footer {
             background-color: var(--primary-dark);
-            padding: clamp(1.5rem, 4vw, 2rem) 0;
+            padding: 2rem 0;
             text-align: center;
             border-top: 1px solid var(--secondary-dark);
-        }
-        
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 clamp(1rem, 3vw, 2rem);
         }
         
         .footer-text {
@@ -857,8 +828,8 @@
         }
         
         .footer-social a {
-            width: clamp(40px, 7vw, 45px);
-            height: clamp(40px, 7vw, 45px);
+            width: 45px;
+            height: 45px;
             background-color: var(--secondary-dark);
             border-radius: 50%;
             display: flex;
@@ -867,7 +838,7 @@
             color: var(--text-secondary);
             text-decoration: none;
             transition: all 0.3s ease;
-            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            font-size: 1.2rem;
         }
         
         .footer-social a:hover {
@@ -875,7 +846,7 @@
             color: var(--highlight);
         }
         
-        /* Animasi Scroll */
+        /* ANIMATIONS */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
@@ -887,160 +858,42 @@
             transform: translateY(0);
         }
         
-        /* Responsive Breakpoints */
+        /* RESPONSIVE BREAKPOINTS */
         
-        /* Large Desktop (1200px and up) */
-        @media (min-width: 1200px) {
-            .nav-container {
-                padding: 0 2rem;
-            }
-            
-            .container {
-                padding: 0 2rem;
-            }
-        }
-        
-        /* Desktop (992px to 1199px) */
-        @media (max-width: 1199px) {
-            .hero-container, .about-container {
-                gap: 3rem;
-            }
-            
-            .social-links {
-                left: -40px;
-            }
-        }
-        
-        /* Tablet (768px to 991px) */
-        @media (max-width: 991px) {
-            .hero-container, .about-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-                text-align: center;
+        /* Extra small devices (phones, 575px and down) */
+        @media (max-width: 575px) {
+            .hero {
+                padding: 5rem 0 2rem;
             }
             
             .hero-content {
-                order: 2;
+                padding: 1rem;
             }
             
             .hero-image {
-                order: 1;
+                padding: 1rem;
             }
             
-            .social-links {
-                position: static;
-                flex-direction: row;
-                justify-content: center;
-                margin-top: 2rem;
-                transform: none;
+            .hero-image-wrapper {
+                width: 250px;
+                height: 250px;
             }
             
-            .hero-buttons {
-                justify-content: center;
-            }
-            
-            .about-image {
-                order: 1;
-            }
-            
-            .about-content {
-                order: 2;
-            }
-            
-            .about-content ul {
-                text-align: left;
-            }
-            
-            .contact-info {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .contact-item {
-                width: 100%;
-                max-width: 300px;
-            }
-        }
-        
-        /* Mobile Landscape (576px to 767px) */
-        @media (max-width: 767px) {
-            .nav-menu {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 70%;
-                height: 100vh;
-                background-color: var(--primary-dark);
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                padding: 2rem;
-                transition: right 0.3s ease;
-                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
-            }
-            
-            .nav-menu.active {
-                right: 0;
-            }
-            
-            .nav-item {
-                margin: 0.5rem 0;
-            }
-            
-            .nav-link {
-                font-size: 1.1rem;
-                padding: 0.8rem 0;
-            }
-            
-            .nav-toggle {
-                display: flex;
-            }
-            
-            .hero {
-                padding: 5rem 1rem 3rem;
-            }
-            
-            .hero-content h1 {
-                margin-bottom: 0.8rem;
-            }
-            
-            .hero-content h2 {
-                margin-bottom: 1rem;
-            }
-            
-            .hero-content p {
-                margin-bottom: 1.5rem;
-            }
-            
-            .hero-buttons {
-                gap: 0.8rem;
-            }
-            
-            .btn {
-                padding: 0.7rem 1.2rem;
-                min-width: 120px;
-            }
-            
-            .section {
+            section {
                 padding: 3rem 0;
             }
             
-            .section-header {
-                margin-bottom: 2rem;
-            }
-            
-            .skills-container {
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-                gap: 1rem;
-            }
-            
-            .skill-card {
+            .about-card, .resume-card, .contact-card {
                 padding: 1.5rem;
             }
             
-            .projects-container {
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            
+            .projects-grid, .org-grid, .cert-grid {
                 grid-template-columns: 1fr;
-                gap: 1.5rem;
             }
             
             .org-card {
@@ -1053,217 +906,105 @@
                 margin-bottom: 1rem;
             }
             
-            .cert-container {
-                grid-template-columns: 1fr;
+            .contact-info {
+                flex-direction: column;
                 gap: 1.5rem;
-            }
-            
-            .contact-container {
-                padding: 2rem 1.5rem;
             }
         }
         
-        /* Mobile Portrait (480px to 575px) */
-        @media (max-width: 575px) {
-            .nav-container {
-                padding: 0 1rem;
-            }
-            
-            .hero {
-                padding: 4rem 1rem 2rem;
-            }
-            
-            .hero-container {
-                gap: 1.5rem;
-            }
-            
+        /* Small devices (landscape phones, 576px and up) */
+        @media (min-width: 576px) {
             .hero-image-wrapper {
-                width: 250px;
-                height: 250px;
+                width: 350px;
+                height: 350px;
             }
             
-            .about-image-wrapper {
-                width: 250px;
-                height: 250px;
+            .skills-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        /* Medium devices (tablets, 768px and up) */
+        @media (min-width: 768px) {
+            .hero {
+                padding: 6rem 0 3rem;
+            }
+            
+            .hero-content {
+                text-align: left;
+                padding: 2rem;
             }
             
             .hero-buttons {
+                justify-content: flex-start;
+            }
+            
+            .social-links {
+                position: absolute;
+                left: 2rem;
+                top: 50%;
+                transform: translateY(-50%);
                 flex-direction: column;
-                width: 100%;
+                margin-top: 0;
             }
             
-            .btn {
-                width: 100%;
-                justify-content: center;
-            }
-            
-            .section {
-                padding: 2.5rem 0;
-            }
-            
-            .section-header {
-                margin-bottom: 1.5rem;
-            }
-            
-            .skills-container {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
-            }
-            
-            .skill-card {
-                padding: 1.2rem;
-            }
-            
-            .project-content {
-                padding: 1.2rem;
-            }
-            
-            .org-card {
-                padding: 1.2rem;
-            }
-            
-            .contact-container {
-                padding: 1.5rem 1rem;
-            }
-            
-            .contact-info {
-                gap: 1.5rem;
-            }
-            
-            .contact-item {
-                min-width: 100%;
-            }
-        }
-        
-        /* Small Mobile (320px to 479px) */
-        @media (max-width: 479px) {
-            .hero {
-                padding: 3rem 0.8rem 2rem;
+            .hero-image {
+                text-align: right;
+                padding: 2rem;
             }
             
             .hero-image-wrapper {
-                width: 200px;
-                height: 200px;
+                width: 400px;
+                height: 400px;
             }
             
-            .about-image-wrapper {
-                width: 200px;
-                height: 200px;
+            .skills-grid {
+                grid-template-columns: repeat(4, 1fr);
             }
             
-            .nav-menu {
-                width: 80%;
-            }
-            
-            .section {
-                padding: 2rem 0;
-            }
-            
-            .skills-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .skill-card {
-                padding: 1rem;
-            }
-            
-            .project-badge {
-                top: 10px;
-                right: 10px;
-                padding: 3px 8px;
-                font-size: 0.7rem;
-            }
-            
-            .org-card {
-                padding: 1rem;
-            }
-            
-            .contact-container {
-                padding: 1.2rem 0.8rem;
-            }
-            
-            .contact-social {
-                gap: 0.8rem;
-            }
-            
-            .footer-social {
-                gap: 0.8rem;
+            .projects-grid, .org-grid, .cert-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
         
-        /* Extra Small Mobile (up to 319px) */
-        @media (max-width: 319px) {
-            .hero-content h1 {
-                font-size: 1.5rem;
+        /* Large devices (desktops, 992px and up) */
+        @media (min-width: 992px) {
+            .hero {
+                padding: 8rem 0 4rem;
             }
             
-            .hero-content h2 {
-                font-size: 1rem;
+            .hero-content {
+                padding: 3rem;
             }
             
-            .hero-content p {
-                font-size: 0.9rem;
+            .hero-image {
+                padding: 3rem;
             }
             
-            .btn {
-                padding: 0.6rem 1rem;
-                font-size: 0.9rem;
+            .hero-image-wrapper {
+                width: 450px;
+                height: 450px;
             }
             
-            .section-title {
-                font-size: 1.5rem;
-            }
-            
-            .section-subtitle {
-                font-size: 0.9rem;
-            }
-            
-            .skill-card {
-                padding: 0.8rem;
-            }
-            
-            .project-content {
-                padding: 1rem;
-            }
-            
-            .org-card {
-                padding: 0.8rem;
-            }
-            
-            .contact-container {
-                padding: 1rem 0.5rem;
+            .projects-grid {
+                grid-template-columns: repeat(3, 1fr);
             }
         }
         
-        /* High DPI Displays */
-        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-            .hero-image img,
-            .about-image img,
-            .project-image img,
-            .cert-image img {
-                image-rendering: -webkit-optimize-contrast;
-                image-rendering: crisp-edges;
+        /* Extra large devices (large desktops, 1200px and up) */
+        @media (min-width: 1200px) {
+            .hero-image-wrapper {
+                width: 500px;
+                height: 500px;
+            }
+            
+            .skills-grid {
+                grid-template-columns: repeat(4, 1fr);
             }
         }
         
-        /* Touch Devices */
+        /* Touch device optimizations */
         @media (hover: none) and (pointer: coarse) {
-            .nav-link:hover::after {
-                width: 0;
-            }
-            
-            .nav-link:active::after {
-                width: 100%;
-            }
-            
-            .btn:hover {
-                transform: none;
-            }
-            
-            .btn:active {
-                transform: scale(0.95);
-            }
-            
             .skill-card:hover,
             .project-card:hover,
             .org-card:hover,
@@ -1278,132 +1019,250 @@
                 transform: scale(0.98);
             }
         }
-        
-        /* Print Styles */
-        @media print {
-            body {
-                background: white;
-                color: black;
-            }
-            
-            nav,
-            .loader-wrapper,
-            .social-links,
-            .hero-buttons,
-            .contact-social,
-            .footer-social {
-                display: none;
-            }
-            
-            .hero,
-            section {
-                padding: 1rem 0;
-            }
-            
-            .hero-container,
-            .about-container {
-                grid-template-columns: 1fr;
-            }
-        }
     </style>
 </head>
 <body>
-    <!-- Loader -->
+    <!-- LOADER -->
     <div class="loader-wrapper">
         <div class="loader"></div>
     </div>
     
-    <!-- Navigation -->
-    <nav id="navbar">
-        <div class="nav-container">
-            <a href="#" class="logo">Rinda<span>.</span></a>
-            <ul class="nav-menu" id="navMenu">
-                <li class="nav-item"><a href="#beranda" class="nav-link">Beranda</a></li>
-                <li class="nav-item"><a href="#tentang" class="nav-link">Tentang</a></li>
-                <li class="nav-item"><a href="#keahlian" class="nav-link">Keahlian</a></li>
-                <li class="nav-item"><a href="#proyek" class="nav-link">Proyek</a></li>
-                <li class="nav-item"><a href="#organisasi" class="nav-link">Organisasi</a></li>
-                <li class="nav-item"><a href="#kontak" class="nav-link">Kontak</a></li>
-            </ul>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
+    <!-- NAVIGATION -->
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Rinda<span>.</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <div class="navbar-toggler-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#beranda">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tentang">Tentang</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#resume">Resume</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#keahlian">Keahlian</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#proyek">Proyek</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#organisasi">Organisasi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#kontak">Kontak</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
     
-    <!-- Hero Section -->
+    <!-- HERO SECTION -->
     <section class="hero" id="beranda">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1>Hai, Saya <span>Rinda</span></h1>
-                <h2>Pengembang Perangkat Lunak & Game</h2>
-                <p>Siswa PPLG yang siap magang di dunia industri digital dengan passion dalam coding dan pengembangan solusi teknologi.</p>
-                <div class="hero-buttons">
-                    <a href="#proyek" class="btn btn-primary">Lihat Proyek <i class="bi bi-arrow-right"></i></a>
-                    <a href="#kontak" class="btn btn-secondary">Hubungi Saya <i class="bi bi-envelope"></i></a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="hero-image-wrapper">
-                    <div class="hero-image-bg"></div>
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3C/svg%3E" 
-                         data-src="/img/foto.png" 
-                         alt="Foto Profil" 
-                         class="lazyload">
-                </div>
-                <div class="social-links">
-                    <a href="https://github.com/AR210108" class="social-link" aria-label="GitHub"><i class="bi bi-github"></i></a>
-                    <a href="https://vercel.com/ar210108" class="social-link" aria-label="Vercel"><i class="bi bi-globe"></i></a>
-                    <a href="https://instagram.com/Aseprinda2101" class="social-link" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-                    <a href="https://tiktok.com/@rinnnn_2101" class="social-link" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- About Section -->
-    <section class="about" id="tentang">
         <div class="container">
-            <div class="section-header fade-in">
-                <h2 class="section-title">Tentang Saya</h2>
-                <p class="section-subtitle">Kenali lebih dekat tentang saya dan tujuan karir saya</p>
-            </div>
-            <div class="about-container">
-                <div class="about-image fade-in">
-                    <div class="about-image-wrapper">
-                        <div class="about-image-bg"></div>
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3C/svg%3E" 
-                             data-src="/img/foto.png" 
-                             alt="Foto Profil" 
-                             class="lazyload">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6">
+                    <div class="hero-content fade-in">
+                        <h1>Hai, Saya <span>Rinda</span></h1>
+                        <h2>Pengembang Perangkat Lunak & Game</h2>
+                        <p>Siswa PPLG yang siap magang di dunia industri digital dengan passion dalam coding dan pengembangan solusi teknologi.</p>
+                        <div class="hero-buttons">
+                            <a href="#proyek" class="btn-custom btn-primary-custom">Lihat Proyek <i class="bi bi-arrow-right"></i></a>
+                            <a href="#kontak" class="btn-custom btn-secondary-custom">Hubungi Saya <i class="bi bi-envelope"></i></a>
+                        </div>
                     </div>
                 </div>
-                <div class="about-content fade-in">
-                    <h3>Profil Saya</h3>
-                    <p>Saya Rinda, siswa kelas XII PPLG 2 di SMKN 1 Kawali, dengan minat dan keahlian di bidang Pengembangan Perangkat Lunak dan Gim (PPLG).</p>
-                    <p>Saya memiliki ketertarikan besar dalam dunia coding, serta terbiasa memperbaiki berbagai perangkat elektronik secara mandiri. Selain itu, saya juga gemar mendengarkan musik sebagai sarana relaksasi dan inspirasi.</p>
-                    <h3>Tujuan PKL</h3>
-                    <p>Saya mengikuti Praktik Kerja Lapangan (PKL) di PT Inovindo Digital Media untuk memperluas wawasan dan pengalaman dalam dunia industri digital, khususnya di bidang pengembangan web dan perangkat lunak.</p>
-                    <ul>
-                        <li><i class="bi bi-check-circle-fill"></i> Belajar langsung dari profesional di bidangnya</li>
-                        <li><i class="bi bi-check-circle-fill"></i> Berkontribusi sesuai dengan kemampuan saya</li>
-                        <li><i class="bi bi-check-circle-fill"></i> Mengembangkan keterampilan teknis</li>
-                    </ul>
+                <div class="col-lg-6">
+                    <div class="hero-image fade-in">
+                        <div class="hero-image-wrapper">
+                            <div class="hero-image-bg"></div>
+                            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 500'%3E%3C/svg%3E" 
+                                 data-src="/img/foto.png" 
+                                 alt="Foto Profil" 
+                                 class="lazyload">
+                        </div>
+                        <div class="social-links">
+                            <a href="https://github.com/AR210108" class="social-link"><i class="bi bi-github"></i></a>
+                            <a href="https://linkedin.com/in/rinda-asep" class="social-link"><i class="bi bi-linkedin"></i></a>
+                            <a href="https://vercel.com/ar210108" class="social-link"><i class="bi bi-globe"></i></a>
+                            <a href="https://instagram.com/Aseprinda2101" class="social-link"><i class="bi bi-instagram"></i></a>
+                            <a href="https://tiktok.com/@rinnnn_2101" class="social-link"><i class="bi bi-tiktok"></i></a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- Skills Section -->
+    <!-- ABOUT SECTION -->
+    <section class="about" id="tentang">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title fade-in">Tentang Saya</h2>
+                <p class="section-subtitle fade-in">Kenali lebih dekat tentang saya dan tujuan karir saya</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="about-card fade-in">
+                        <h3>Profil Saya</h3>
+                        <p>Saya Rinda, siswa kelas XII PPLG 2 di SMKN 1 Kawali, dengan minat dan keahlian di bidang Pengembangan Perangkat Lunak dan Gim (PPLG).</p>
+                        <p>Saya memiliki ketertarikan besar dalam dunia coding, serta terbiasa memperbaiki berbagai perangkat elektronik secara mandiri. Selain itu, saya juga gemar mendengarkan musik sebagai sarana relaksasi dan inspirasi.</p>
+                        
+                        <h3>Tujuan PKL</h3>
+                        <p>Saya mengikuti Praktik Kerja Lapangan (PKL) di PT Inovindo Digital Media untuk memperluas wawasan dan pengalaman dalam dunia industri digital, khususnya di bidang pengembangan web dan perangkat lunak.</p>
+                        
+                        <ul>
+                            <li><i class="bi bi-check-circle-fill"></i> Belajar langsung dari profesional di bidangnya</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Berkontribusi sesuai dengan kemampuan saya</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Mengembangkan keterampilan teknis</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- RESUME SECTION -->
+    <section class="resume" id="resume">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title fade-in">Resume</h2>
+                <p class="section-subtitle fade-in">Ringkasan pendidikan, pengalaman, dan pencapaian saya</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="resume-card fade-in">
+                        <h3><i class="bi bi-mortarboard"></i> Pendidikan</h3>
+                        
+                        <div class="resume-item">
+                            <div class="resume-header">
+                                <h4 class="resume-title">SMKN 1 Kawali</h4>
+                                <span class="resume-date">2021 - Sekarang</span>
+                            </div>
+                            <h5 class="resume-subtitle">Pengembangan Perangkat Lunak dan Gim (PPLG)</h5>
+                            <p class="resume-description">
+                                Fokus pada pengembangan web, mobile, dan game development. Mempelajari berbagai bahasa pemrograman seperti HTML, CSS, JavaScript, PHP, dan C#.
+                            </p>
+                            <div class="skill-tags">
+                                <span class="skill-tag">HTML</span>
+                                <span class="skill-tag">CSS</span>
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">PHP</span>
+                                <span class="skill-tag">Laravel</span>
+                                <span class="skill-tag">Unity</span>
+                            </div>
+                        </div>
+                        
+                        <div class="resume-item">
+                            <div class="resume-header">
+                                <h4 class="resume-title">SMP Negeri 1 Kawali</h4>
+                                <span class="resume-date">2018 - 2021</span>
+                            </div>
+                            <h5 class="resume-subtitle">Sekolah Menengah Pertama</h5>
+                            <p class="resume-description">
+                                Lulus dengan nilai yang memuaskan, aktif dalam kegiatan ekstrakurikuler dan organisasi sekolah.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="resume-card fade-in">
+                        <h3><i class="bi bi-briefcase"></i> Pengalaman</h3>
+                        
+                        <div class="resume-item">
+                            <div class="resume-header">
+                                <h4 class="resume-title">Praktik Kerja Lapangan (PKL)</h4>
+                                <span class="resume-date">2024</span>
+                            </div>
+                            <h5 class="resume-subtitle">PT Inovindo Digital Media</h5>
+                            <p class="resume-description">
+                                Magang sebagai Junior Web Developer, bertanggung jawab atas pengembangan fitur baru pada aplikasi web perusahaan dan maintenance sistem yang sudah ada.
+                            </p>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Web Development</span>
+                                <span class="skill-tag">Laravel</span>
+                                <span class="skill-tag">MySQL</span>
+                                <span class="skill-tag">Git</span>
+                            </div>
+                        </div>
+                        
+                        <div class="resume-item">
+                            <div class="resume-header">
+                                <h4 class="resume-title">Ketua Divisi ICT</h4>
+                                <span class="resume-date">2022 - 2023</span>
+                            </div>
+                            <h5 class="resume-subtitle">Ekstrakurikuler EXIT</h5>
+                            <p class="resume-description">
+                                Memimpin divisi ICT, bertanggung jawab atas maintenance komputer dan jaringan sekolah, serta mengadakan pelatihan teknologi untuk siswa.
+                            </p>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Leadership</span>
+                                <span class="skill-tag">Networking</span>
+                                <span class="skill-tag">Hardware</span>
+                                <span class="skill-tag">Troubleshooting</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-12">
+                    <div class="resume-card fade-in">
+                        <h3><i class="bi bi-trophy"></i> Pencapaian</h3>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="resume-item">
+                                    <div class="resume-header">
+                                        <h4 class="resume-title">Juara 2 Lomba Web Development</h4>
+                                        <span class="resume-date">2023</span>
+                                    </div>
+                                    <h5 class="resume-subtitle">Kompetisi Tingkat Kabupaten</h5>
+                                    <p class="resume-description">
+                                        Meraih juara 2 dalam lomba web development tingkat kabupaten dengan proyek sistem informasi desa.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="resume-item">
+                                    <div class="resume-header">
+                                        <h4 class="resume-title">Sertifikat Kompetensi</h4>
+                                        <span class="resume-date">2023</span>
+                                    </div>
+                                    <h5 class="resume-subtitle">Web Programming</h5>
+                                    <p class="resume-description">
+                                        Mendapatkan sertifikat kompetensi bidang web programming dengan nilai sangat baik.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- SKILLS SECTION -->
     <section class="skills" id="keahlian">
         <div class="container">
-            <div class="section-header fade-in">
-                <h2 class="section-title">Keahlian</h2>
-                <p class="section-subtitle">Kemampuan teknis yang saya kuasai</p>
+            <div class="text-center mb-5">
+                <h2 class="section-title fade-in">Keahlian</h2>
+                <p class="section-subtitle fade-in">Kemampuan teknis yang saya kuasai</p>
             </div>
-            <div class="skills-container">
+            
+            <div class="skills-grid">
                 <div class="skill-card fade-in">
                     <div class="skill-icon"><i class="bi bi-filetype-html"></i></div>
                     <h3 class="skill-name">HTML</h3>
@@ -1420,14 +1279,8 @@
                     <p class="skill-level">Menengah</p>
                 </div>
                 <div class="skill-card fade-in">
-                    <div class="skill-icon">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50'%3E%3C/svg%3E" 
-                             data-src="https://z-cdn-media.chatglm.cn/files/92453340-8bc2-4f9d-bccd-98172a8d1966_download.png?auth_key=1788174823-abc1592cf4fd4215b516e997ca0395c4-0-647976136d673ac3c755ffc5ce4f4f9d" 
-                             alt="Laravel" 
-                             class="lazyload"
-                             style="width: 50px; height: auto;">
-                    </div>
-                    <h3 class="skill-name">Laravel</h3>
+                    <div class="skill-icon"><i class="bi bi-code-slash"></i></div>
+                    <h3 class="skill-name">PHP</h3>
                     <p class="skill-level">Menengah</p>
                 </div>
                 <div class="skill-card fade-in">
@@ -1454,14 +1307,15 @@
         </div>
     </section>
     
-    <!-- Projects Section -->
+    <!-- PROJECTS SECTION -->
     <section class="projects" id="proyek">
         <div class="container">
-            <div class="section-header fade-in">
-                <h2 class="section-title">Proyek Saya</h2>
-                <p class="section-subtitle">Beberapa proyek yang telah saya kerjakan</p>
+            <div class="text-center mb-5">
+                <h2 class="section-title fade-in">Proyek Saya</h2>
+                <p class="section-subtitle fade-in">Beberapa proyek yang telah saya kerjakan</p>
             </div>
-            <div class="projects-container">
+            
+            <div class="projects-grid">
                 <div class="project-card fade-in">
                     <div class="project-image">
                         <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 220'%3E%3C/svg%3E" 
@@ -1476,6 +1330,7 @@
                         <a href="Quis Sejarah.apk" class="project-link">Lihat Proyek <i class="bi bi-arrow-right"></i></a>
                     </div>
                 </div>
+                
                 <div class="project-card fade-in">
                     <div class="project-image">
                         <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 220'%3E%3C/svg%3E" 
@@ -1490,6 +1345,7 @@
                         <a href="https://github.com/AR210108/py-kartu-absen-himpunan" class="project-link">Lihat Proyek <i class="bi bi-arrow-right"></i></a>
                     </div>
                 </div>
+                
                 <div class="project-card fade-in">
                     <div class="project-image">
                         <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 220'%3E%3C/svg%3E" 
@@ -1504,6 +1360,7 @@
                         <a href="https://github.com/AR210108/webdest" class="project-link">Lihat Proyek <i class="bi bi-arrow-right"></i></a>
                     </div>
                 </div>
+                
                 <div class="project-card fade-in">
                     <div class="project-image">
                         <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 220'%3E%3C/svg%3E" 
@@ -1518,6 +1375,7 @@
                         <a href="https://github.com/AR210108/AE-Absensi_Exit-" class="project-link">Lihat Proyek <i class="bi bi-arrow-right"></i></a>
                     </div>
                 </div>
+                
                 <div class="project-card fade-in">
                     <div class="project-image">
                         <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 220'%3E%3C/svg%3E" 
@@ -1536,14 +1394,15 @@
         </div>
     </section>
     
-    <!-- Organization Section -->
+    <!-- ORGANIZATION SECTION -->
     <section class="organization" id="organisasi">
         <div class="container">
-            <div class="section-header fade-in">
-                <h2 class="section-title">Organisasi & Eskul</h2>
-                <p class="section-subtitle">Pengalaman organisasi dan kegiatan ekstrakurikuler</p>
+            <div class="text-center mb-5">
+                <h2 class="section-title fade-in">Organisasi & Eskul</h2>
+                <p class="section-subtitle fade-in">Pengalaman organisasi dan kegiatan ekstrakurikuler</p>
             </div>
-            <div class="org-container">
+            
+            <div class="org-grid">
                 <div class="org-card fade-in">
                     <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3C/svg%3E" 
                          data-src="/img/Exit.png" 
@@ -1555,6 +1414,7 @@
                         <p>Bertugas membenarkan komputer apabila ada yang bermasalah, atau jaringan tidak ada.</p>
                     </div>
                 </div>
+                
                 <div class="org-card fade-in">
                     <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3C/svg%3E" 
                          data-src="/img/himpunan.png" 
@@ -1570,14 +1430,15 @@
         </div>
     </section>
     
-    <!-- Certificates Section -->
+    <!-- CERTIFICATES SECTION -->
     <section class="certificates" id="sertifikat">
         <div class="container">
-            <div class="section-header fade-in">
-                <h2 class="section-title">Sertifikat & Pencapaian</h2>
-                <p class="section-subtitle">Sertifikat yang telah saya peroleh</p>
+            <div class="text-center mb-5">
+                <h2 class="section-title fade-in">Sertifikat & Pencapaian</h2>
+                <p class="section-subtitle fade-in">Sertifikat yang telah saya peroleh</p>
             </div>
-            <div class="cert-container">
+            
+            <div class="cert-grid">
                 <div class="cert-card fade-in">
                     <div class="cert-image">
                         <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'%3E%3C/svg%3E" 
@@ -1586,6 +1447,7 @@
                              class="lazyload">
                     </div>
                 </div>
+                
                 <div class="cert-card fade-in">
                     <div class="cert-image">
                         <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'%3E%3C/svg%3E" 
@@ -1598,17 +1460,19 @@
         </div>
     </section>
     
-    <!-- Contact Section -->
+    <!-- CONTACT SECTION -->
     <section class="contact" id="kontak">
         <div class="container">
-            <div class="section-header fade-in">
-                <h2 class="section-title">Kontak</h2>
-                <p class="section-subtitle">Hubungi saya untuk kolaborasi atau informasi lebih lanjut</p>
+            <div class="text-center mb-5">
+                <h2 class="section-title fade-in">Kontak</h2>
+                <p class="section-subtitle fade-in">Hubungi saya untuk kolaborasi atau informasi lebih lanjut</p>
             </div>
-            <div class="contact-container fade-in">
+            
+            <div class="contact-card fade-in">
                 <div class="contact-content">
                     <h3>Mari Berbicara</h3>
                     <p>Saya tertarik untuk mendengar tentang proyek Anda dan bagaimana saya dapat membantu. Jangan ragu untuk menghubungi saya.</p>
+                    
                     <div class="contact-info">
                         <div class="contact-item">
                             <div class="contact-icon"><i class="bi bi-envelope"></i></div>
@@ -1617,6 +1481,7 @@
                                 <a href="mailto:rinda2101rinda@gmail.com">rinda2101rinda@gmail.com</a>
                             </div>
                         </div>
+                        
                         <div class="contact-item">
                             <div class="contact-icon"><i class="bi bi-whatsapp"></i></div>
                             <div class="contact-text">
@@ -1625,70 +1490,47 @@
                             </div>
                         </div>
                     </div>
+                    
                     <div class="contact-social">
-                        <a href="https://github.com/AR210108" aria-label="GitHub"><i class="bi bi-github"></i></a>
-                        <a href="https://vercel.com/ar210108" aria-label="Vercel"><i class="bi bi-globe"></i></a>
-                        <a href="https://instagram.com/Aseprinda2101" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-                        <a href="https://tiktok.com/@rinnnn_2101" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+                        <a href="https://github.com/AR210108"><i class="bi bi-github"></i></a>
+                        <a href="https://linkedin.com/in/rinda-asep"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://vercel.com/ar210108"><i class="bi bi-globe"></i></a>
+                        <a href="https://instagram.com/Aseprinda2101"><i class="bi bi-instagram"></i></a>
+                        <a href="https://tiktok.com/@rinnnn_2101"><i class="bi bi-tiktok"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer>
-        <div class="footer-content">
+        <div class="container">
             <p class="footer-text">&copy; 2025 Rinda. All rights reserved.</p>
             <div class="footer-social">
-                <a href="https://github.com/AR210108" aria-label="GitHub"><i class="bi bi-github"></i></a>
-                <a href="https://vercel.com/ar210108" aria-label="Vercel"><i class="bi bi-globe"></i></a>
-                <a href="https://instagram.com/Aseprinda2101" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-                <a href="https://tiktok.com/@rinnnn_2101" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+                <a href="https://github.com/AR210108"><i class="bi bi-github"></i></a>
+                <a href="https://linkedin.com/in/rinda-asep"><i class="bi bi-linkedin"></i></a>
+                <a href="https://vercel.com/ar210108"><i class="bi bi-globe"></i></a>
+                <a href="https://instagram.com/Aseprinda2101"><i class="bi bi-instagram"></i></a>
+                <a href="https://tiktok.com/@rinnnn_2101"><i class="bi bi-tiktok"></i></a>
             </div>
         </div>
     </footer>
     
-    <!-- JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js" async></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
     <script>
-        // Preloader
+        // Loader
         window.addEventListener('load', function() {
             setTimeout(function() {
                 document.querySelector('.loader-wrapper').classList.add('hidden');
-            }, 300);
+            }, 500);
         });
         
-        // Navigation Toggle
-        const navToggle = document.getElementById('navToggle');
-        const navMenu = document.getElementById('navMenu');
-        
-        navToggle.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-            navToggle.classList.toggle('active');
-        });
-        
-        // Close menu when clicking on a link
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                navToggle.classList.remove('active');
-            });
-        });
-        
-        // Close menu when clicking outside
-        document.addEventListener('click', function(event) {
-            if (!navToggle.contains(event.target) && !navMenu.contains(event.target)) {
-                navMenu.classList.remove('active');
-                navToggle.classList.remove('active');
-            }
-        });
-        
-        // Header scroll effect
+        // Navbar scroll effect
         window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
+            const navbar = document.querySelector('.navbar-custom');
             if (window.scrollY > 50) {
                 navbar.classList.add('scrolled');
             } else {
@@ -1696,9 +1538,9 @@
             }
         });
         
-        // Smooth scrolling untuk link navigasi
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
@@ -1707,62 +1549,53 @@
                         top: offsetTop,
                         behavior: 'smooth'
                     });
+                    
+                    // Close mobile menu
+                    const navbarCollapse = document.querySelector('.navbar-collapse');
+                    if (navbarCollapse.classList.contains('show')) {
+                        const navbarToggler = document.querySelector('.navbar-toggler');
+                        navbarToggler.click();
+                    }
                 }
             });
         });
         
-        // Animasi saat scroll
-        const fadeElements = document.querySelectorAll('.fade-in');
+        // Fade in animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
         
-        const fadeInObserver = new IntersectionObserver(function(entries) {
+        const observer = new IntersectionObserver(function(entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    fadeInObserver.unobserve(entry.target);
+                    observer.unobserve(entry.target);
                 }
             });
-        }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+        }, observerOptions);
+        
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
         });
         
-        fadeElements.forEach(element => {
-            fadeInObserver.observe(element);
-        });
-        
-        // Preload gambar saat hover
-        document.querySelectorAll('.project-card, .org-card, .cert-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                const img = this.querySelector('img');
-                if (img && img.dataset.src) {
-                    const preloadImg = new Image();
-                    preloadImg.src = img.dataset.src;
-                }
+        // Lazy loading images
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazyload');
+                        imageObserver.unobserve(img);
+                    }
+                });
             });
-        });
-        
-        // Touch device optimizations
-        if ('ontouchstart' in window) {
-            document.body.classList.add('touch-device');
+            
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
         }
-        
-        // Prevent horizontal scroll on mobile
-        let touchStartX = 0;
-        let touchEndX = 0;
-        
-        document.addEventListener('touchstart', function(e) {
-            touchStartX = e.changedTouches[0].screenX;
-        });
-        
-        document.addEventListener('touchmove', function(e) {
-            touchEndX = e.changedTouches[0].screenX;
-            if (touchEndX < touchStartX - 50 || touchEndX > touchStartX + 50) {
-                // Allow vertical scroll but prevent horizontal
-                if (Math.abs(e.changedTouches[0].screenY - e.changedTouches[0].screenY) < Math.abs(touchEndX - touchStartX)) {
-                    e.preventDefault();
-                }
-            }
-        });
     </script>
 </body>
 </html>
