@@ -3,7 +3,7 @@
 <head> 
     <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>Portofolio Rinda</title> 
+    <title>Portofolio Profesional - Rinda</title> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"> 
@@ -165,6 +165,63 @@
         
         .nav-link i {
             margin-right: 5px;
+        }
+        
+        /* Dropdown Menu Styles */
+        .dropdown-menu {
+            background-color: var(--primary);
+            border: none;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            padding: 0.5rem 0;
+            margin-top: 0.5rem;
+            animation: fadeInDown 0.3s ease;
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .dropdown-item {
+            color: white !important;
+            padding: 0.6rem 1.5rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .dropdown-item:hover {
+            background-color: var(--secondary);
+            color: white !important;
+            padding-left: 2rem;
+        }
+        
+        .dropdown-item i {
+            margin-right: 8px;
+            width: 16px;
+            text-align: center;
+        }
+        
+        .dropdown-toggle::after {
+            border: none;
+            margin-left: 5px;
+            vertical-align: middle;
+        }
+        
+        .dropdown-toggle .bi-chevron-down {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .dropdown.show .dropdown-toggle .bi-chevron-down {
+            transform: rotate(180deg);
         }
         
         /* Mobile Menu Toggle */
@@ -1015,6 +1072,27 @@
                 padding: 0.5rem 0;
             }
             
+            /* Mobile Dropdown */
+            .dropdown-menu {
+                background-color: var(--secondary);
+                position: static !important;
+                transform: none !important;
+                border: none;
+                box-shadow: none;
+                padding-left: 1rem;
+                margin-top: 0.5rem;
+            }
+            
+            .dropdown-item {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.9rem;
+            }
+            
+            .dropdown-item:hover {
+                background-color: transparent;
+                padding-left: 1.2rem;
+            }
+            
             /* Hero Section */
             .hero { 
                 padding: 6rem 1rem 4rem; 
@@ -1302,21 +1380,32 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#beranda"><i class="bi bi-house-door"></i> Beranda</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#tentang"><i class="bi bi-person"></i> Tentang</a>
+                        
+                        <!-- Dropdown Tentang -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="tentangDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-person"></i> Tentang
+                                <i class="bi bi-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="tentangDropdown">
+                                <li><a class="dropdown-item" href="#tentang"><i class="bi bi-person-circle"></i> Profil</a></li>
+                                <li><a class="dropdown-item" href="#resume"><i class="bi bi-file-earmark-text"></i> Resume</a></li>
+                            </ul>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#resume"><i class="bi bi-file-earmark-text"></i> Resume</a>
+                        
+                        <!-- Dropdown Portfolio -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="portfolioDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-briefcase"></i> Portfolio
+                                <i class="bi bi-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="portfolioDropdown">
+                                <li><a class="dropdown-item" href="#keahlian"><i class="bi bi-tools"></i> Keahlian</a></li>
+                                <li><a class="dropdown-item" href="#proyek"><i class="bi bi-window"></i> Proyek</a></li>
+                                <li><a class="dropdown-item" href="#organisasi"><i class="bi bi-people"></i> Organisasi</a></li>
+                            </ul>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#keahlian"><i class="bi bi-tools"></i> Keahlian</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#proyek"><i class="bi bi-window"></i> Proyek</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#organisasi"><i class="bi bi-people"></i> Organisasi</a>
-                        </li>
+                        
                         <li class="nav-item">
                             <a class="nav-link" href="#kontak"><i class="bi bi-envelope"></i> Kontak</a>
                         </li>
@@ -1361,13 +1450,14 @@
                 
                 <div class="resume-item">
                     <h5>SMKN 1 Kawali</h5>
-                    <div class="resume-date">2023 - Sekarang</div>
+                    <div class="resume-date">2021 - Sekarang</div>
                     <p>Jurusan Pengembangan Perangkat Lunak dan Gim (PPLG)</p>
                 </div>
                 
                 <div class="resume-item">
                     <h5>SMP Negeri 1 Kawali</h5>
-                    <div class="resume-date">2020 - 2023</div>
+                    <div class="resume-date">2018 - 2021</div>
+                    <p>Fokus pada matematika dan sains</p>
                 </div>
             </div>
             
@@ -1377,9 +1467,16 @@
                 
                 <div class="resume-item">
                     <h5>Praktik Kerja Lapangan (PKL)</h5>
-                    <div class="resume-date">Oktober2025 - Februari 2026</div>
+                    <div class="resume-date">Juli - September 2024</div>
                     <p>PT Inovindo Digital Media - Magang sebagai pengembang web junior, membantu dalam pembuatan dan pemeliharaan website klien.</p>
                 </div>
+                
+                <div class="resume-item">
+                    <h5>Proyek Pengembangan Game</h5>
+                    <div class="resume-date">2023</div>
+                    <p>Mengembangkan game edukasi "Quiz Sejarah Indonesia" menggunakan Unity sebagai proyek tugas akhir semester.</p>
+                </div>
+            </div>
             
             <!-- Soft Skills -->
             <div class="resume-section">
@@ -1685,6 +1782,12 @@
                         const navbarToggler = document.querySelector('.navbar-toggler');
                         navbarToggler.click();
                     }
+                    
+                    // Tutup dropdown setelah klik
+                    const dropdowns = document.querySelectorAll('.dropdown-menu.show');
+                    dropdowns.forEach(dropdown => {
+                        dropdown.classList.remove('show');
+                    });
                 }
             });
         });
@@ -1715,4 +1818,3 @@
     </script>
 </body> 
 </html>
-
