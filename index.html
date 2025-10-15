@@ -251,8 +251,8 @@
         .hero-image-wrapper {
             position: relative;
             display: inline-block;
-            width: min(300px, 80vw);
-            height: min(300px, 80vw);
+            width: min(200px, 60vw); /* Diperkecil dari 300px ke 200px */
+            height: min(200px, 60vw); /* Diperkecil dari 300px ke 200px */
         }
         
         .hero-image-bg {
@@ -264,7 +264,7 @@
             background: linear-gradient(135deg, var(--accent-navy), var(--accent-ice));
             border-radius: 50%;
             opacity: 0.2;
-            filter: blur(30px);
+            filter: blur(20px); /* Diperkecil blur dari 30px ke 20px */
             z-index: 0;
         }
         
@@ -273,7 +273,7 @@
             height: 100%;
             object-fit: cover;
             border-radius: 50%;
-            border: 3px solid var(--accent-ice);
+            border: 2px solid var(--accent-ice);
             position: relative;
             z-index: 1;
         }
@@ -282,12 +282,12 @@
             display: flex;
             justify-content: center;
             gap: 1rem;
-            margin-top: 2rem;
+            margin-top: 1.5rem; /* Diperkecil dari 2rem ke 1.5rem */
         }
         
         .social-link {
-            width: 45px;
-            height: 45px;
+            width: 40px; /* Diperkecil dari 45px ke 40px */
+            height: 40px; /* Diperkecil dari 45px ke 40px */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -296,7 +296,7 @@
             color: var(--text-secondary);
             text-decoration: none;
             transition: all 0.3s ease;
-            font-size: 1.2rem;
+            font-size: 1.1rem; /* Diperkecil dari 1.2rem ke 1.1rem */
         }
         
         .social-link:hover {
@@ -849,8 +849,8 @@
             }
             
             .hero-image-wrapper {
-                width: 250px;
-                height: 250px;
+                width: 180px; /* Diperkecil lagi untuk mobile */
+                height: 180px; /* Diperkecil lagi untuk mobile */
             }
             
             section {
@@ -889,8 +889,8 @@
         /* Small devices (landscape phones, 576px and up) */
         @media (min-width: 576px) {
             .hero-image-wrapper {
-                width: 350px;
-                height: 350px;
+                width: 220px; /* Ukuran medium untuk tablet */
+                height: 220px; /* Ukuran medium untuk tablet */
             }
             
             .skills-grid {
@@ -928,8 +928,8 @@
             }
             
             .hero-image-wrapper {
-                width: 400px;
-                height: 400px;
+                width: 280px; /* Ukuran untuk desktop */
+                height: 280px; /* Ukuran untuk desktop */
             }
             
             .skills-grid {
@@ -956,8 +956,8 @@
             }
             
             .hero-image-wrapper {
-                width: 450px;
-                height: 450px;
+                width: 320px; /* Ukuran untuk desktop besar */
+                height: 320px; /* Ukuran untuk desktop besar */
             }
             
             .projects-grid {
@@ -968,8 +968,8 @@
         /* Extra large devices (large desktops, 1200px and up) */
         @media (min-width: 1200px) {
             .hero-image-wrapper {
-                width: 500px;
-                height: 500px;
+                width: 350px; /* Ukuran maksimal untuk desktop */
+                height: 350px; /* Ukuran maksimal untuk desktop */
             }
             
             .skills-grid {
@@ -1438,7 +1438,7 @@
             <p class="footer-text">&copy; 2025 Rinda. All rights reserved.</p>
             <div class="footer-social">
                 <a href="https://github.com/AR210108"><i class="bi bi-github"></i></a>
-                <a href="https://linkedin.com/in/Rinda"><i class="bi bi-linkedin"></i></a>
+                <a href="https://linkedin.com/in/rinda-asep"><i class="bi bi-linkedin"></i></a>
                 <a href="https://vercel.com/ar210108"><i class="bi bi-globe"></i></a>
                 <a href="https://instagram.com/Aseprinda2101"><i class="bi bi-instagram"></i></a>
                 <a href="https://tiktok.com/@rinnnn_2101"><i class="bi bi-tiktok"></i></a>
