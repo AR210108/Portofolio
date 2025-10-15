@@ -73,7 +73,7 @@
             justify-content: center;
             align-items: center;
             z-index: 9999;
-            transition: opacity 0.5s ease, visibility 0.5s ease;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
         }
 
         .preloader.fade-out {
@@ -87,7 +87,7 @@
             border: 3px solid rgba(255, 255, 255, 0.2);
             border-top: 3px solid var(--white);
             border-radius: 50%;
-            animation: spin 1s linear infinite;
+            animation: spin 0.6s linear infinite;
         }
 
         @keyframes spin {
@@ -100,7 +100,7 @@
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             box-shadow: var(--shadow-sm);
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
             padding: 1rem 0;
             z-index: 1000;
         }
@@ -133,7 +133,7 @@
             font-weight: 500;
             margin: 0 0.5rem;
             position: relative;
-            transition: color 0.3s ease;
+            transition: color 0.2s ease;
         }
 
         .nav-link::after {
@@ -144,7 +144,7 @@
             width: 0;
             height: 2px;
             background: var(--accent-blue);
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
             transform: translateX(-50%);
         }
 
@@ -179,7 +179,7 @@
                 radial-gradient(circle at 20% 80%, rgba(62, 146, 204, 0.1) 0%, transparent 50%),
                 radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
                 radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
-            animation: pulse 10s ease-in-out infinite;
+            animation: pulse 5s ease-in-out infinite;
         }
 
         @keyframes pulse {
@@ -198,7 +198,7 @@
             position: absolute;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
-            animation: float-particle 15s infinite linear;
+            animation: float-particle 8s infinite linear;
         }
 
         @keyframes float-particle {
@@ -241,12 +241,12 @@
             border: 5px solid rgba(255, 255, 255, 0.2);
             margin-bottom: 2rem;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            animation: float-avatar 6s ease-in-out infinite;
+            animation: float-avatar 3s ease-in-out infinite;
         }
 
         @keyframes float-avatar {
             0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
+            50% { transform: translateY(-10px); }
         }
 
         .hero-badge {
@@ -262,13 +262,13 @@
             font-size: 0.9rem;
             font-weight: 500;
             margin-bottom: 2rem;
-            animation: slideInUp 1s ease;
+            animation: slideInUp 0.5s ease;
         }
 
         @keyframes slideInUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(20px);
             }
             to {
                 opacity: 1;
@@ -286,7 +286,7 @@
             color: var(--white);
             margin-bottom: 1.5rem;
             line-height: 1.1;
-            animation: slideInUp 1s ease 0.2s both;
+            animation: slideInUp 0.5s ease 0.1s both;
         }
 
         .hero-title .gradient-text {
@@ -302,7 +302,7 @@
             margin-bottom: 2.5rem;
             line-height: 1.6;
             max-width: 700px;
-            animation: slideInUp 1s ease 0.4s both;
+            animation: slideInUp 0.5s ease 0.2s both;
         }
 
         .hero-subtitle .highlight {
@@ -349,7 +349,7 @@
             border-radius: 20px;
             padding: clamp(2rem, 4vw, 3rem);
             box-shadow: var(--shadow-lg);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
         .about-card:hover {
@@ -384,7 +384,7 @@
             padding: clamp(1.5rem, 3vw, 2rem);
             text-align: center;
             box-shadow: var(--shadow-md);
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
             position: relative;
             overflow: hidden;
         }
@@ -398,7 +398,7 @@
             height: 4px;
             background: var(--gradient-2);
             transform: scaleX(0);
-            transition: transform 0.3s ease;
+            transition: transform 0.2s ease;
         }
 
         .skill-card:hover::before {
@@ -421,7 +421,7 @@
             justify-content: center;
             font-size: clamp(1.5rem, 3vw, 2rem);
             color: var(--white);
-            transition: transform 0.3s ease;
+            transition: transform 0.2s ease;
         }
 
         .skill-card:hover .skill-icon {
@@ -453,7 +453,7 @@
             border-radius: 15px;
             overflow: hidden;
             box-shadow: var(--shadow-md);
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
             position: relative;
         }
 
@@ -472,7 +472,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: transform 0.3s ease;
         }
 
         .project-card:hover .project-img {
@@ -515,7 +515,7 @@
             display: inline-flex;
             align-items: center;
             gap: 5px;
-            transition: gap 0.3s ease;
+            transition: gap 0.2s ease;
         }
 
         .project-link:hover {
@@ -550,7 +550,7 @@
             border-radius: 15px;
             box-shadow: var(--shadow-md);
             width: calc(50% - 30px);
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
         }
 
         .timeline-item:nth-child(odd) .timeline-content {
@@ -607,7 +607,7 @@
             padding: clamp(1.5rem, 3vw, 2rem);
             text-align: center;
             box-shadow: var(--shadow-md);
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
         }
 
         .org-card:hover {
@@ -682,7 +682,7 @@
             justify-content: center;
             font-size: clamp(1.2rem, 2vw, 1.5rem);
             color: var(--white);
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
             flex-shrink: 0;
         }
 
@@ -700,7 +700,7 @@
         .contact-text a {
             color: var(--ice-blue);
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: color 0.2s ease;
         }
 
         .contact-text a:hover {
@@ -732,7 +732,7 @@
             justify-content: center;
             color: var(--white);
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
         }
 
         .social-link:hover {
@@ -818,6 +818,19 @@
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
             }
+
+            /* Faster animations on mobile */
+            .hero-avatar {
+                animation: float-avatar 2s ease-in-out infinite;
+            }
+            
+            .particle {
+                animation: float-particle 6s infinite linear;
+            }
+            
+            .hero::before {
+                animation: pulse 3s ease-in-out infinite;
+            }
         }
 
         @media (max-width: 576px) {
@@ -841,6 +854,15 @@
             
             .social-links {
                 gap: 1rem;
+            }
+
+            /* Even faster on small mobile */
+            .hero-avatar {
+                animation: float-avatar 1.5s ease-in-out infinite;
+            }
+            
+            .particle {
+                animation: float-particle 4s infinite linear;
             }
         }
 
@@ -894,7 +916,7 @@
             height: 3px;
             background-color: var(--primary-blue);
             border-radius: 3px;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
             transform-origin: center;
         }
 
@@ -1022,14 +1044,14 @@
         <div class="container">
             <div class="text-center mb-5">
                 <h2 class="section-title" data-aos="fade-up">Tentang Saya</h2>
-                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="50">
                     Kenali lebih dekat tentang saya dan perjalanan karir saya
                 </p>
             </div>
             
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="about-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="about-card" data-aos="fade-up" data-aos-delay="100">
                         <h3 class="about-section-title">
                             <i class="bi bi-person-circle"></i>
                             Profil
@@ -1056,13 +1078,13 @@
         <div class="container">
             <div class="text-center mb-5">
                 <h2 class="section-title" data-aos="fade-up">Keahlian Teknis</h2>
-                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="50">
                     Teknologi dan tools yang saya kuasai
                 </p>
             </div>
             
             <div class="skills-grid">
-                <div class="skill-card" data-aos="zoom-in" data-aos-delay="100">
+                <div class="skill-card" data-aos="zoom-in" data-aos-delay="50">
                     <div class="skill-icon">
                         <i class="bi bi-filetype-html"></i>
                     </div>
@@ -1070,7 +1092,7 @@
                     <p class="skill-level">Advanced</p>
                 </div>
                 
-                <div class="skill-card" data-aos="zoom-in" data-aos-delay="200">
+                <div class="skill-card" data-aos="zoom-in" data-aos-delay="100">
                     <div class="skill-icon">
                         <i class="bi bi-filetype-css"></i>
                     </div>
@@ -1078,7 +1100,7 @@
                     <p class="skill-level">Advanced</p>
                 </div>
                 
-                <div class="skill-card" data-aos="zoom-in" data-aos-delay="300">
+                <div class="skill-card" data-aos="zoom-in" data-aos-delay="150">
                     <div class="skill-icon">
                         <i class="bi bi-filetype-js"></i>
                     </div>
@@ -1086,7 +1108,7 @@
                     <p class="skill-level">Intermediate</p>
                 </div>
                 
-                <div class="skill-card" data-aos="zoom-in" data-aos-delay="400">
+                <div class="skill-card" data-aos="zoom-in" data-aos-delay="200">
                     <div class="skill-icon">
                         <i class="bi bi-bootstrap"></i>
                     </div>
@@ -1094,7 +1116,7 @@
                     <p class="skill-level">Advanced</p>
                 </div>
                 
-                <div class="skill-card" data-aos="zoom-in" data-aos-delay="500">
+                <div class="skill-card" data-aos="zoom-in" data-aos-delay="250">
                     <div class="skill-icon">
                         <i class="bi bi-filetype-php"></i>
                     </div>
@@ -1102,7 +1124,7 @@
                     <p class="skill-level">Intermediate</p>
                 </div>
                 
-                <div class="skill-card" data-aos="zoom-in" data-aos-delay="600">
+                <div class="skill-card" data-aos="zoom-in" data-aos-delay="300">
                     <div class="skill-icon">
                         <i class="bi bi-controller"></i>
                     </div>
@@ -1110,7 +1132,7 @@
                     <p class="skill-level">Intermediate</p>
                 </div>
                 
-                <div class="skill-card" data-aos="zoom-in" data-aos-delay="700">
+                <div class="skill-card" data-aos="zoom-in" data-aos-delay="350">
                     <div class="skill-icon">
                         <i class="bi bi-brush"></i>
                     </div>
@@ -1118,7 +1140,7 @@
                     <p class="skill-level">Intermediate</p>
                 </div>
                 
-                <div class="skill-card" data-aos="zoom-in" data-aos-delay="800">
+                <div class="skill-card" data-aos="zoom-in" data-aos-delay="400">
                     <div class="skill-icon">
                         <i class="bi bi-database"></i>
                     </div>
@@ -1134,13 +1156,13 @@
         <div class="container">
             <div class="text-center mb-5">
                 <h2 class="section-title" data-aos="fade-up">Proyek Unggulan</h2>
-                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="50">
                     Beberapa proyek terbaik yang telah saya kerjakan
                 </p>
             </div>
             
             <div class="projects-grid">
-                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="project-card" data-aos="fade-up" data-aos-delay="50">
                     <div class="project-img-container">
                         <img src="/img/proyek1.jpg" alt="Game Quiz" class="project-img">
                         <span class="project-badge">Game</span>
@@ -1156,7 +1178,7 @@
                     </div>
                 </div>
                 
-                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="project-img-container">
                         <img src="/img/proyek2.png" alt="Kartu Absen" class="project-img">
                         <span class="project-badge">Web App</span>
@@ -1172,7 +1194,7 @@
                     </div>
                 </div>
                 
-                <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="project-card" data-aos="fade-up" data-aos-delay="150">
                     <div class="project-img-container">
                         <img src="/img/proyek3.png" alt="Sistem Informasi Desa" class="project-img">
                         <span class="project-badge">Website</span>
@@ -1188,7 +1210,7 @@
                     </div>
                 </div>
                 
-                <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="project-img-container">
                         <img src="/img/proyek4.png" alt="Sistem Absensi" class="project-img">
                         <span class="project-badge">Website</span>
@@ -1204,7 +1226,7 @@
                     </div>
                 </div>
                 
-                <div class="project-card" data-aos="fade-up" data-aos-delay="500">
+                <div class="project-card" data-aos="fade-up" data-aos-delay="250">
                     <div class="project-img-container">
                         <img src="/img/proyek5.png" alt="Keuangan Pribadi" class="project-img">
                         <span class="project-badge">Web App</span>
@@ -1228,13 +1250,13 @@
         <div class="container">
             <div class="text-center mb-5">
                 <h2 class="section-title" data-aos="fade-up">Resume</h2>
-                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="50">
                     Ringkasan pendidikan dan pengalaman saya
                 </p>
             </div>
             
             <div class="resume-timeline">
-                <div class="timeline-item" data-aos="fade-right">
+                <div class="timeline-item" data-aos="fade-right" data-aos-delay="50">
                     <div class="timeline-content">
                         <div class="timeline-dot"></div>
                         <div class="timeline-date">2021 - Sekarang</div>
@@ -1244,7 +1266,7 @@
                     </div>
                 </div>
                 
-                <div class="timeline-item" data-aos="fade-left">
+                <div class="timeline-item" data-aos="fade-left" data-aos-delay="100">
                     <div class="timeline-content">
                         <div class="timeline-dot"></div>
                         <div class="timeline-date">Juli - September 2024</div>
@@ -1254,7 +1276,7 @@
                     </div>
                 </div>
                 
-                <div class="timeline-item" data-aos="fade-right">
+                <div class="timeline-item" data-aos="fade-right" data-aos-delay="150">
                     <div class="timeline-content">
                         <div class="timeline-dot"></div>
                         <div class="timeline-date">2023</div>
@@ -1272,20 +1294,20 @@
         <div class="container">
             <div class="text-center mb-5">
                 <h2 class="section-title" data-aos="fade-up">Organisasi & Ekstrakurikuler</h2>
-                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="50">
                     Pengalaman organisasi dan kegiatan saya
                 </p>
             </div>
             
             <div class="org-grid">
-                <div class="org-card" data-aos="zoom-in" data-aos-delay="100">
+                <div class="org-card" data-aos="zoom-in" data-aos-delay="50">
                     <img src="/img/Exit.png" alt="EXIT" class="org-logo">
                     <h3 class="org-name">Ekstrakurikuler EXIT</h3>
                     <p class="org-position">Ketua Divisi ICT</p>
                     <p>Bertugas memperbaiki komputer dan mengelola jaringan di sekolah.</p>
                 </div>
                 
-                <div class="org-card" data-aos="zoom-in" data-aos-delay="200">
+                <div class="org-card" data-aos="zoom-in" data-aos-delay="100">
                     <img src="/img/himpunan.png" alt="Himpunan PPLG" class="org-logo">
                     <h3 class="org-name">Himpunan PPLG</h3>
                     <p class="org-position">Anggota Divisi Korlap</p>
@@ -1299,10 +1321,10 @@
             </div>
             
             <div class="row mt-4">
-                <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="50">
                     <img src="/img/sertifikat/sertifikat1.png" alt="Sertifikat 1" class="img-fluid rounded shadow">
                 </div>
-                <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <img src="/img/sertifikat/sertifikat2.jpg" alt="Sertifikat 2" class="img-fluid rounded shadow">
                 </div>
             </div>
@@ -1315,12 +1337,12 @@
             <div class="contact-section">
                 <div class="text-center">
                     <h2 class="contact-title" data-aos="fade-up">Hubungi Saya</h2>
-                    <p class="contact-subtitle" data-aos="fade-up" data-aos-delay="100">
+                    <p class="contact-subtitle" data-aos="fade-up" data-aos-delay="50">
                         Mari berkolaborasi dan diskusikan proyek Anda
                     </p>
                     
                     <div class="contact-info">
-                        <div class="contact-item" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="contact-item" data-aos="zoom-in" data-aos-delay="100">
                             <div class="contact-icon">
                                 <i class="bi bi-envelope"></i>
                             </div>
@@ -1330,7 +1352,7 @@
                             </div>
                         </div>
                         
-                        <div class="contact-item" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="contact-item" data-aos="zoom-in" data-aos-delay="150">
                             <div class="contact-icon">
                                 <i class="bi bi-whatsapp"></i>
                             </div>
@@ -1349,19 +1371,19 @@
     <footer>
         <div class="container">
             <div class="social-links">
-                <a href="https://github.com/AR210108" class="social-link" data-aos="zoom-in" data-aos-delay="100">
+                <a href="https://github.com/AR210108" class="social-link" data-aos="zoom-in" data-aos-delay="50">
                     <i class="bi bi-github"></i>
                 </a>
-                <a href="https://vercel.com/ar210108" class="social-link" data-aos="zoom-in" data-aos-delay="200">
+                <a href="https://vercel.com/ar210108" class="social-link" data-aos="zoom-in" data-aos-delay="100">
                     <i class="bi bi-globe"></i>
                 </a>
-                <a href="https://instagram.com/Aseprinda2101" class="social-link" data-aos="zoom-in" data-aos-delay="300">
+                <a href="https://instagram.com/Aseprinda2101" class="social-link" data-aos="zoom-in" data-aos-delay="150">
                     <i class="bi bi-instagram"></i>
                 </a>
-                <a href="https://tiktok.com/@rinnnn_2101" class="social-link" data-aos="zoom-in" data-aos-delay="400">
+                <a href="https://tiktok.com/@rinnnn_2101" class="social-link" data-aos="zoom-in" data-aos-delay="200">
                     <i class="bi bi-tiktok"></i>
                 </a>
-                <a href="https://linkedin.com/in/rinda" class="social-link" data-aos="zoom-in" data-aos-delay="500">
+                <a href="https://linkedin.com/in/rinda" class="social-link" data-aos="zoom-in" data-aos-delay="250">
                     <i class="bi bi-linkedin"></i>
                 </a>
             </div>
@@ -1374,18 +1396,18 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
     <script>
-        // Initialize AOS
+        // Initialize AOS with faster animations
         AOS.init({
-            duration: 1000,
+            duration: 600, // Reduced from 1000ms
             once: true,
-            offset: 100
+            offset: 50 // Reduced from 100
         });
 
-        // Preloader
+        // Preloader - faster fade out
         window.addEventListener('load', function() {
             setTimeout(function() {
                 document.querySelector('.preloader').classList.add('fade-out');
-            }, 1000);
+            }, 500); // Reduced from 1000ms
         });
 
         // Navbar scroll effect
@@ -1440,10 +1462,11 @@
             });
         });
 
-        // Generate particles for hero section
+        // Generate particles for hero section - fewer particles on mobile
         function createParticles() {
             const particlesContainer = document.querySelector('.hero-particles');
-            const particleCount = 50;
+            const isMobile = window.innerWidth <= 768;
+            const particleCount = isMobile ? 20 : 50; // Fewer particles on mobile
             
             for (let i = 0; i < particleCount; i++) {
                 const particle = document.createElement('div');
