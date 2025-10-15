@@ -157,7 +157,7 @@
             color: var(--accent-blue) !important;
         }
 
-        /* Hero Section - New Design */
+        /* Hero Section */
         .hero {
             min-height: 100vh;
             background: var(--gradient-hero);
@@ -281,7 +281,7 @@
         }
 
         .hero-title {
-            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-size: 4rem;
             font-weight: 700;
             color: var(--white);
             margin-bottom: 1.5rem;
@@ -297,7 +297,7 @@
         }
 
         .hero-subtitle {
-            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            font-size: 1.4rem;
             color: rgba(255, 255, 255, 0.9);
             margin-bottom: 2.5rem;
             line-height: 1.6;
@@ -312,12 +312,12 @@
 
         /* Section Styles */
         .section {
-            padding: clamp(60px, 8vw, 100px) 0;
+            padding: 100px 0;
             position: relative;
         }
 
         .section-title {
-            font-size: clamp(2rem, 4vw, 2.5rem);
+            font-size: 2.5rem;
             font-weight: 700;
             color: var(--primary-blue);
             margin-bottom: 1rem;
@@ -347,7 +347,7 @@
         .about-card {
             background: var(--white);
             border-radius: 20px;
-            padding: clamp(2rem, 4vw, 3rem);
+            padding: 3rem;
             box-shadow: var(--shadow-lg);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
@@ -358,7 +358,7 @@
         }
 
         .about-section-title {
-            font-size: clamp(1.3rem, 3vw, 1.5rem);
+            font-size: 1.5rem;
             color: var(--primary-blue);
             margin-bottom: 1.5rem;
             display: flex;
@@ -374,14 +374,14 @@
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: clamp(1.5rem, 3vw, 2rem);
+            gap: 2rem;
             margin-top: 3rem;
         }
 
         .skill-card {
             background: var(--white);
             border-radius: 15px;
-            padding: clamp(1.5rem, 3vw, 2rem);
+            padding: 2rem;
             text-align: center;
             box-shadow: var(--shadow-md);
             transition: all 0.2s ease;
@@ -411,15 +411,15 @@
         }
 
         .skill-icon {
-            width: clamp(60px, 8vw, 80px);
-            height: clamp(60px, 8vw, 80px);
+            width: 80px;
+            height: 80px;
             margin: 0 auto 1.5rem;
             background: var(--gradient-2);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-size: 2rem;
             color: var(--white);
             transition: transform 0.2s ease;
         }
@@ -444,7 +444,7 @@
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: clamp(1.5rem, 3vw, 2rem);
+            gap: 2rem;
             margin-top: 3rem;
         }
 
@@ -597,14 +597,14 @@
         .org-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: clamp(1.5rem, 3vw, 2rem);
+            gap: 2rem;
             margin-top: 3rem;
         }
 
         .org-card {
             background: var(--white);
             border-radius: 15px;
-            padding: clamp(1.5rem, 3vw, 2rem);
+            padding: 2rem;
             text-align: center;
             box-shadow: var(--shadow-md);
             transition: all 0.2s ease;
@@ -616,8 +616,8 @@
         }
 
         .org-logo {
-            width: clamp(80px, 12vw, 100px);
-            height: clamp(80px, 12vw, 100px);
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             margin: 0 auto 1.5rem;
             object-fit: cover;
@@ -642,13 +642,13 @@
             background: var(--gradient-1);
             color: var(--white);
             border-radius: 30px;
-            padding: clamp(2rem, 5vw, 4rem);
+            padding: 4rem;
             margin: 3rem 0;
         }
 
         .contact-title {
             color: var(--white);
-            font-size: clamp(2rem, 4vw, 2.5rem);
+            font-size: 2.5rem;
             margin-bottom: 1rem;
         }
 
@@ -661,7 +661,7 @@
             display: flex;
             justify-content: center;
             align-items: flex-start;
-            gap: clamp(2rem, 4vw, 3rem);
+            gap: 3rem;
             flex-wrap: wrap;
         }
 
@@ -670,18 +670,18 @@
             align-items: center;
             gap: 1rem;
             text-align: left;
-            min-width: 250px; /* Ensure consistent width */
+            min-width: 250px;
         }
 
         .contact-icon {
-            width: clamp(50px, 6vw, 60px);
-            height: clamp(50px, 6vw, 60px);
+            width: 60px;
+            height: 60px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: clamp(1.2rem, 2vw, 1.5rem);
+            font-size: 1.5rem;
             color: var(--white);
             transition: all 0.2s ease;
             flex-shrink: 0;
@@ -700,7 +700,7 @@
         .contact-text h5 {
             font-weight: 600;
             margin-bottom: 0.25rem;
-            white-space: nowrap; /* Prevent text wrapping */
+            white-space: nowrap;
         }
 
         .contact-text a {
@@ -708,7 +708,7 @@
             text-decoration: none;
             transition: color 0.2s ease;
             display: block;
-            white-space: nowrap; /* Prevent text wrapping */
+            white-space: nowrap;
         }
 
         .contact-text a:hover {
@@ -731,8 +731,8 @@
         }
 
         .social-link {
-            width: clamp(45px, 6vw, 50px);
-            height: clamp(45px, 6vw, 50px);
+            width: 50px;
+            height: 50px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             display: flex;
@@ -741,13 +741,6 @@
             color: var(--white);
             text-decoration: none;
             transition: all 0.2s ease;
-            opacity: 0; /* Start hidden for animation */
-            transform: translateY(20px);
-        }
-
-        .social-link.show {
-            opacity: 1;
-            transform: translateY(0);
         }
 
         .social-link:hover {
@@ -756,168 +749,7 @@
             color: var(--white);
         }
 
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .timeline-content {
-                width: 100%;
-            }
-            
-            .resume-timeline::before {
-                left: 20px;
-            }
-            
-            .timeline-dot {
-                left: 20px;
-            }
-            
-            .timeline-item {
-                padding-left: 50px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .navbar {
-                padding: 0.8rem 0;
-            }
-            
-            .navbar-brand {
-                font-size: 1.3rem;
-            }
-            
-            .navbar-brand img {
-                width: 35px;
-                height: 35px;
-            }
-            
-            .nav-link {
-                margin: 0.3rem 0;
-                padding: 0.5rem 0;
-            }
-            
-            .hero-avatar {
-                width: 150px;
-                height: 150px;
-            }
-            
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1.1rem;
-            }
-            
-            .section {
-                padding: 60px 0;
-            }
-            
-            .about-card {
-                padding: 2rem;
-            }
-            
-            .contact-info {
-                flex-direction: column;
-                gap: 2rem;
-                align-items: center;
-            }
-            
-            .contact-item {
-                width: 100%;
-                max-width: 300px;
-                justify-content: center;
-                min-width: auto; /* Override for mobile */
-            }
-            
-            .contact-text h5,
-            .contact-text a {
-                white-space: normal; /* Allow wrapping on mobile */
-            }
-            
-            .skills-grid,
-            .projects-grid,
-            .org-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            /* Faster animations on mobile */
-            .hero-avatar {
-                animation: float-avatar 2s ease-in-out infinite;
-            }
-            
-            .particle {
-                animation: float-particle 6s infinite linear;
-            }
-            
-            .hero::before {
-                animation: pulse 3s ease-in-out infinite;
-            }
-
-            /* Faster footer animation on mobile */
-            .social-link {
-                transition: all 0.15s ease;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .hero {
-                padding: 2rem 0;
-                padding-top: 60px;
-            }
-            
-            .project-img-container {
-                height: 200px;
-            }
-            
-            .project-content {
-                padding: 1.5rem;
-            }
-            
-            .contact-section {
-                padding: 2rem 1.5rem;
-                margin: 2rem 0;
-            }
-            
-            .social-links {
-                gap: 1rem;
-            }
-
-            /* Even faster on small mobile */
-            .hero-avatar {
-                animation: float-avatar 1.5s ease-in-out infinite;
-            }
-            
-            .particle {
-                animation: float-particle 4s infinite linear;
-            }
-
-            /* Immediate footer animation on small mobile */
-            .social-link {
-                opacity: 1;
-                transform: translateY(0);
-                transition: all 0.1s ease;
-            }
-        }
-
-        @media (max-width: 380px) {
-            .hero-title {
-                font-size: 2rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1rem;
-            }
-            
-            .section-title {
-                font-size: 1.8rem;
-            }
-            
-            .section-subtitle {
-                font-size: 1rem;
-            }
-        }
-
-        /* Mobile Menu Styles - Fixed Hamburger/X Toggle */
+        /* Mobile Menu Styles */
         .navbar-toggler {
             border: none;
             padding: 0.25rem 0.5rem;
@@ -953,7 +785,7 @@
             transform-origin: center;
         }
 
-        /* Initial state - always hamburger on page load */
+        /* Initial state - hamburger */
         .navbar-toggler-icon span:nth-child(1) {
             transform: rotate(0deg) translate(0, 0);
         }
@@ -967,7 +799,7 @@
             transform: rotate(0deg) translate(0, 0);
         }
 
-        /* When menu is open (showing) - X icon */
+        /* When menu is open - X icon */
         .navbar-collapse.show ~ .navbar-toggler .navbar-toggler-icon span:nth-child(1) {
             transform: rotate(45deg) translate(6px, 6px);
         }
@@ -981,7 +813,6 @@
             transform: rotate(-45deg) translate(7px, -7px);
         }
 
-        /* Alternative: Using Bootstrap's collapsed class */
         .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon span:nth-child(1) {
             transform: rotate(45deg) translate(6px, 6px);
         }
@@ -1044,7 +875,7 @@
         </div>
     </nav>
 
-    <!-- Hero Section - New Design -->
+    <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-particles">
             <!-- Particles will be generated by JavaScript -->
@@ -1429,18 +1260,18 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
     <script>
-        // Initialize AOS with faster animations
+        // Initialize AOS
         AOS.init({
-            duration: 600, // Reduced from 1000ms
+            duration: 600,
             once: true,
-            offset: 50 // Reduced from 100
+            offset: 50
         });
 
-        // Preloader - faster fade out
+        // Preloader
         window.addEventListener('load', function() {
             setTimeout(function() {
                 document.querySelector('.preloader').classList.add('fade-out');
-            }, 500); // Reduced from 1000ms
+            }, 500);
         });
 
         // Navbar scroll effect
@@ -1495,11 +1326,10 @@
             });
         });
 
-        // Generate particles for hero section - fewer particles on mobile
+        // Generate particles for hero section
         function createParticles() {
             const particlesContainer = document.querySelector('.hero-particles');
-            const isMobile = window.innerWidth <= 768;
-            const particleCount = isMobile ? 20 : 50; // Fewer particles on mobile
+            const particleCount = 50;
             
             for (let i = 0; i < particleCount; i++) {
                 const particle = document.createElement('div');
@@ -1541,42 +1371,8 @@
             });
         });
 
-        // Faster footer animation on mobile
-        function animateFooterLinks() {
-            const socialLinks = document.querySelectorAll('.social-link');
-            const isMobile = window.innerWidth <= 576;
-            
-            if (isMobile) {
-                // On small mobile, show immediately
-                socialLinks.forEach(link => {
-                    link.classList.add('show');
-                });
-            } else {
-                // On larger screens, use staggered animation
-                socialLinks.forEach((link, index) => {
-                    setTimeout(() => {
-                        link.classList.add('show');
-                    }, index * 100); // 100ms stagger
-                });
-            }
-        }
-
-        // Initialize particles and footer animation
+        // Initialize particles
         createParticles();
-        
-        // Wait for AOS to be ready, then animate footer
-        setTimeout(() => {
-            animateFooterLinks();
-        }, 300);
-
-        // Re-animate on resize
-        let resizeTimer;
-        window.addEventListener('resize', function() {
-            clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(function() {
-                animateFooterLinks();
-            }, 250);
-        });
     </script>
 </body>
 </html>
